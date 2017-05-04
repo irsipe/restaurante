@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lineamenu</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Nombreplatoes</th>
+                <td>{{ lineamenu.nombreplatoEs }}</td>
+            </tr>
+            <tr>
+                <th>Nombreplatocat</th>
+                <td>{{ lineamenu.nombreplatoCat }}</td>
+            </tr>
+            <tr>
+                <th>Nombreplatoen</th>
+                <td>{{ lineamenu.nombreplatoEn }}</td>
+            </tr>
+            <tr>
+                <th>Idlineamenu</th>
+                <td>{{ lineamenu.idlineamenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lineamenu_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('lineamenu_edit', { 'idlineamenu': lineamenu.idlineamenu }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

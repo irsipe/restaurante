@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cliente</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ cliente.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Apellido1</th>
+                <td>{{ cliente.apellido1 }}</td>
+            </tr>
+            <tr>
+                <th>Apellido2</th>
+                <td>{{ cliente.apellido2 }}</td>
+            </tr>
+            <tr>
+                <th>Idioma</th>
+                <td>{{ cliente.idioma }}</td>
+            </tr>
+            <tr>
+                <th>Fechanacimiento</th>
+                <td>{% if cliente.fechanacimiento %}{{ cliente.fechanacimiento|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ cliente.email }}</td>
+            </tr>
+            <tr>
+                <th>Movil</th>
+                <td>{{ cliente.movil }}</td>
+            </tr>
+            <tr>
+                <th>Tffijo</th>
+                <td>{{ cliente.tffijo }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ cliente.direccion }}</td>
+            </tr>
+            <tr>
+                <th>Poblacion</th>
+                <td>{{ cliente.poblacion }}</td>
+            </tr>
+            <tr>
+                <th>Fechaalta</th>
+                <td>{% if cliente.fechaalta %}{{ cliente.fechaalta|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fechabaja</th>
+                <td>{% if cliente.fechabaja %}{{ cliente.fechabaja|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Descuento</th>
+                <td>{{ cliente.descuento }}</td>
+            </tr>
+            <tr>
+                <th>Activo</th>
+                <td>{% if cliente.activo %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Nvisitas</th>
+                <td>{{ cliente.nvisitas }}</td>
+            </tr>
+            <tr>
+                <th>Idcliente</th>
+                <td>{{ cliente.idcliente }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cliente_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('cliente_edit', { 'idcliente': cliente.idcliente }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

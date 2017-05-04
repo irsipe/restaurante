@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Menu" table="menu">
+    <indexes>
+      <index name="idx_fecha" columns="fecha"/>
+    </indexes>
+    <id name="idmenu" type="integer" column="idmenu">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fecha" type="date" column="fecha" nullable="false"/>
+    <field name="precio" type="decimal" column="precio" precision="6" scale="2" nullable="true"/>
+    <field name="cantidadventas" type="integer" column="cantidadventas" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

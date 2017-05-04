@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Lineamenu" table="lineamenu">
+    <indexes>
+      <index name="fk_idcategoria_idx" columns="idcategoria"/>
+      <index name="fk_idmenu_idx" columns="idmenu"/>
+      <index name="fk_menu_idx" columns="idmenu"/>
+    </indexes>
+    <id name="idlineamenu" type="integer" column="idlineamenu">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombreplatoEs" type="string" column="nombreplato_es" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="nombreplatoCat" type="string" column="nombreplato_cat" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="nombreplatoEn" type="string" column="nombreplato_en" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idmenu" target-entity="Menu" fetch="LAZY">
+      <join-columns>
+        <join-column name="idmenu" referenced-column-name="idmenu"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idcategoria" target-entity="Categoria" fetch="LAZY">
+      <join-columns>
+        <join-column name="idcategoria" referenced-column-name="idcategoria"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

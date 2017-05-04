@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Menu</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Fecha</th>
+                <td>{% if menu.fecha %}{{ menu.fecha|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Precio</th>
+                <td>{{ menu.precio }}</td>
+            </tr>
+            <tr>
+                <th>Cantidadventas</th>
+                <td>{{ menu.cantidadventas }}</td>
+            </tr>
+            <tr>
+                <th>Idmenu</th>
+                <td>{{ menu.idmenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('menu_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('menu_edit', { 'idmenu': menu.idmenu }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

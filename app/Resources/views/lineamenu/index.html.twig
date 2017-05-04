@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lineamenus list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombreplatoes</th>
+                <th>Nombreplatocat</th>
+                <th>Nombreplatoen</th>
+                <th>Idlineamenu</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lineamenu in lineamenus %}
+            <tr>
+                <td><a href="{{ path('lineamenu_show', { 'idlineamenu': lineamenu.idlineamenu }) }}">{{ lineamenu.nombreplatoEs }}</a></td>
+                <td>{{ lineamenu.nombreplatoCat }}</td>
+                <td>{{ lineamenu.nombreplatoEn }}</td>
+                <td>{{ lineamenu.idlineamenu }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('lineamenu_show', { 'idlineamenu': lineamenu.idlineamenu }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('lineamenu_edit', { 'idlineamenu': lineamenu.idlineamenu }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lineamenu_new') }}">Create a new lineamenu</a>
+        </li>
+    </ul>
+{% endblock %}

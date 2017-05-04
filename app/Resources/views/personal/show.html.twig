@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Personal</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ personal.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Apellido1</th>
+                <td>{{ personal.apellido1 }}</td>
+            </tr>
+            <tr>
+                <th>Apellido2</th>
+                <td>{{ personal.apellido2 }}</td>
+            </tr>
+            <tr>
+                <th>Nacionalidad</th>
+                <td>{{ personal.nacionalidad }}</td>
+            </tr>
+            <tr>
+                <th>Telefonofijo</th>
+                <td>{{ personal.telefonofijo }}</td>
+            </tr>
+            <tr>
+                <th>Movil</th>
+                <td>{{ personal.movil }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ personal.email }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ personal.direccion }}</td>
+            </tr>
+            <tr>
+                <th>Poblacion</th>
+                <td>{{ personal.poblacion }}</td>
+            </tr>
+            <tr>
+                <th>Fechanacimiento</th>
+                <td>{% if personal.fechanacimiento %}{{ personal.fechanacimiento|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Idpersonal</th>
+                <td>{{ personal.idpersonal }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('personal_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('personal_edit', { 'idpersonal': personal.idpersonal }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

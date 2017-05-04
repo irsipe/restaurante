@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Menu
+ *
+ * @ORM\Table(name="menu", indexes={@ORM\Index(name="idx_fecha", columns={"fecha"})})
+ * @ORM\Entity
+ */
+class Menu
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha", type="date", nullable=false)
+     */
+    private $fecha;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="precio", type="decimal", precision=6, scale=2, nullable=true)
+     */
+    private $precio;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cantidadventas", type="integer", nullable=true)
+     */
+    private $cantidadventas;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idmenu", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idmenu;
+
+
+}
+

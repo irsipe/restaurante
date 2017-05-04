@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Comentario</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Comentario</th>
+                <td>{{ comentario.comentario }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{% if comentario.fecha %}{{ comentario.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Valoracion</th>
+                <td>{{ comentario.valoracion }}</td>
+            </tr>
+            <tr>
+                <th>Visible</th>
+                <td>{% if comentario.visible %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Idcomentario</th>
+                <td>{{ comentario.idcomentario }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('comentario_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('comentario_edit', { 'idcomentario': comentario.idcomentario }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

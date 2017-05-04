@@ -1,0 +1,113 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Producto
+ *
+ * @ORM\Table(name="producto", indexes={@ORM\Index(name="Idx_nombre_es", columns={"nombre_es"}), @ORM\Index(name="idx_nombre_cat", columns={"nombre_cat"}), @ORM\Index(name="idx_nombre_en", columns={"nombre_en"}), @ORM\Index(name="FK_idcategoria_idx", columns={"idcategoria"})})
+ * @ORM\Entity
+ */
+class Producto
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_es", type="string", length=45, nullable=false)
+     */
+    private $nombreEs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_cat", type="string", length=45, nullable=false)
+     */
+    private $nombreCat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_en", type="string", length=45, nullable=false)
+     */
+    private $nombreEn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion_es", type="string", length=100, nullable=false)
+     */
+    private $descripcionEs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion_cat", type="string", length=100, nullable=true)
+     */
+    private $descripcionCat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion_en", type="string", length=100, nullable=true)
+     */
+    private $descripcionEn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="preparacion_es", type="text", length=65535, nullable=true)
+     */
+    private $preparacionEs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="preparacion_cat", type="text", length=65535, nullable=true)
+     */
+    private $preparacionCat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="preparacion_en", type="text", length=65535, nullable=true)
+     */
+    private $preparacionEn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="precio", type="decimal", precision=6, scale=2, nullable=true)
+     */
+    private $precio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagen", type="string", length=100, nullable=true)
+     */
+    private $imagen;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idproducto", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idproducto;
+
+    /**
+     * @var \AppBundle\Entity\Categoria
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categoria")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idcategoria", referencedColumnName="idcategoria")
+     * })
+     */
+    private $idcategoria;
+
+
+}
+

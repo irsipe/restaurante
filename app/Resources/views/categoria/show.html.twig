@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Categorium</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Descripciones</th>
+                <td>{{ categorium.descripcionEs }}</td>
+            </tr>
+            <tr>
+                <th>Descripcioncat</th>
+                <td>{{ categorium.descripcionCat }}</td>
+            </tr>
+            <tr>
+                <th>Descripcionen</th>
+                <td>{{ categorium.descripcionEn }}</td>
+            </tr>
+            <tr>
+                <th>Idcategoria</th>
+                <td>{{ categorium.idcategoria }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('categoria_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('categoria_edit', { 'idcategoria': categorium.idcategoria }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

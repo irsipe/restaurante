@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Reservaplato" table="reservaplato">
+    <indexes>
+      <index name="fx_idreserva_idx" columns="idreserva"/>
+      <index name="fx_idlineamenu_idx" columns="idlineamenu"/>
+      <index name="fx_idproducto_idx" columns="idproducto"/>
+    </indexes>
+    <id name="idreservaplato" type="integer" column="idreservaplato">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="idreserva" target-entity="Reserva" fetch="LAZY">
+      <join-columns>
+        <join-column name="idreserva" referenced-column-name="idreserva"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idproducto" target-entity="Producto" fetch="LAZY">
+      <join-columns>
+        <join-column name="idproducto" referenced-column-name="idproducto"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idlineamenu" target-entity="Lineamenu" fetch="LAZY">
+      <join-columns>
+        <join-column name="idlineamenu" referenced-column-name="idlineamenu"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

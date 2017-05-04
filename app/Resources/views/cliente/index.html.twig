@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Clientes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido1</th>
+                <th>Apellido2</th>
+                <th>Idioma</th>
+                <th>Fechanacimiento</th>
+                <th>Email</th>
+                <th>Movil</th>
+                <th>Tffijo</th>
+                <th>Direccion</th>
+                <th>Poblacion</th>
+                <th>Fechaalta</th>
+                <th>Fechabaja</th>
+                <th>Descuento</th>
+                <th>Activo</th>
+                <th>Nvisitas</th>
+                <th>Idcliente</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cliente in clientes %}
+            <tr>
+                <td><a href="{{ path('cliente_show', { 'idcliente': cliente.idcliente }) }}">{{ cliente.nombre }}</a></td>
+                <td>{{ cliente.apellido1 }}</td>
+                <td>{{ cliente.apellido2 }}</td>
+                <td>{{ cliente.idioma }}</td>
+                <td>{% if cliente.fechanacimiento %}{{ cliente.fechanacimiento|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.movil }}</td>
+                <td>{{ cliente.tffijo }}</td>
+                <td>{{ cliente.direccion }}</td>
+                <td>{{ cliente.poblacion }}</td>
+                <td>{% if cliente.fechaalta %}{{ cliente.fechaalta|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if cliente.fechabaja %}{{ cliente.fechabaja|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ cliente.descuento }}</td>
+                <td>{% if cliente.activo %}Yes{% else %}No{% endif %}</td>
+                <td>{{ cliente.nvisitas }}</td>
+                <td>{{ cliente.idcliente }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('cliente_show', { 'idcliente': cliente.idcliente }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('cliente_edit', { 'idcliente': cliente.idcliente }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cliente_new') }}">Create a new cliente</a>
+        </li>
+    </ul>
+{% endblock %}

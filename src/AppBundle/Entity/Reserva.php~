@@ -1,0 +1,71 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Reserva
+ *
+ * @ORM\Table(name="reserva", indexes={@ORM\Index(name="idx_fecha", columns={"fecha"}), @ORM\Index(name="fk_idcliente_idx", columns={"idcliente"})})
+ * @ORM\Entity
+ */
+class Reserva
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha", type="date", nullable=false)
+     */
+    private $fecha;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="hora", type="time", nullable=false)
+     */
+    private $hora;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ncomensales", type="integer", nullable=false)
+     */
+    private $ncomensales;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=100, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idmesa", type="integer", nullable=true)
+     */
+    private $idmesa;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idreserva", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idreserva;
+
+    /**
+     * @var \AppBundle\Entity\Cliente
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Cliente")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idcliente", referencedColumnName="idcliente")
+     * })
+     */
+    private $idcliente;
+
+
+}
+

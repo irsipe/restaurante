@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Categoria" table="categoria">
+    <indexes>
+      <index name="Idx_desces" columns="descripcion_es"/>
+    </indexes>
+    <id name="idcategoria" type="integer" column="idcategoria">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="descripcionEs" type="string" column="descripcion_es" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="descripcionCat" type="string" column="descripcion_cat" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="descripcionEn" type="string" column="descripcion_en" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

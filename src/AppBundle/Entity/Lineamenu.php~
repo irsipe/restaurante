@@ -1,0 +1,67 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Lineamenu
+ *
+ * @ORM\Table(name="lineamenu", indexes={@ORM\Index(name="fk_idcategoria_idx", columns={"idcategoria"}), @ORM\Index(name="fk_idmenu_idx", columns={"idmenu"}), @ORM\Index(name="fk_menu_idx", columns={"idmenu"})})
+ * @ORM\Entity
+ */
+class Lineamenu
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombreplato_es", type="string", length=45, nullable=false)
+     */
+    private $nombreplatoEs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombreplato_cat", type="string", length=45, nullable=false)
+     */
+    private $nombreplatoCat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombreplato_en", type="string", length=45, nullable=false)
+     */
+    private $nombreplatoEn;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idlineamenu", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idlineamenu;
+
+    /**
+     * @var \AppBundle\Entity\Menu
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Menu")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idmenu", referencedColumnName="idmenu")
+     * })
+     */
+    private $idmenu;
+
+    /**
+     * @var \AppBundle\Entity\Categoria
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categoria")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idcategoria", referencedColumnName="idcategoria")
+     * })
+     */
+    private $idcategoria;
+
+
+}
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Producto" table="producto">
+    <indexes>
+      <index name="Idx_nombre_es" columns="nombre_es"/>
+      <index name="idx_nombre_cat" columns="nombre_cat"/>
+      <index name="idx_nombre_en" columns="nombre_en"/>
+      <index name="FK_idcategoria_idx" columns="idcategoria"/>
+    </indexes>
+    <id name="idproducto" type="integer" column="idproducto">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombreEs" type="string" column="nombre_es" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="nombreCat" type="string" column="nombre_cat" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="nombreEn" type="string" column="nombre_en" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="descripcionEs" type="string" column="descripcion_es" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="descripcionCat" type="string" column="descripcion_cat" length="100" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="descripcionEn" type="string" column="descripcion_en" length="100" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="preparacionEs" type="text" column="preparacion_es" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="preparacionCat" type="text" column="preparacion_cat" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="preparacionEn" type="text" column="preparacion_en" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="precio" type="decimal" column="precio" precision="6" scale="2" nullable="true"/>
+    <field name="imagen" type="string" column="imagen" length="100" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idcategoria" target-entity="Categoria" fetch="LAZY">
+      <join-columns>
+        <join-column name="idcategoria" referenced-column-name="idcategoria"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

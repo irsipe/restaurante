@@ -1,0 +1,106 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Personal
+ *
+ * @ORM\Table(name="personal", indexes={@ORM\Index(name="idx_nombre", columns={"nombre"}), @ORM\Index(name="fk_cargo_idx", columns={"idcargo"})})
+ * @ORM\Entity
+ */
+class Personal
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=45, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellido1", type="string", length=45, nullable=false)
+     */
+    private $apellido1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellido2", type="string", length=45, nullable=true)
+     */
+    private $apellido2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nacionalidad", type="string", length=45, nullable=true)
+     */
+    private $nacionalidad;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefonofijo", type="string", length=15, nullable=true)
+     */
+    private $telefonofijo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="movil", type="string", length=15, nullable=false)
+     */
+    private $movil;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=45, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="direccion", type="string", length=100, nullable=true)
+     */
+    private $direccion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="poblacion", type="string", length=45, nullable=true)
+     */
+    private $poblacion;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fechanacimiento", type="date", nullable=true)
+     */
+    private $fechanacimiento;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idpersonal", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idpersonal;
+
+    /**
+     * @var \AppBundle\Entity\Cargo
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Cargo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idcargo", referencedColumnName="idcargo")
+     * })
+     */
+    private $idcargo;
+
+
+}
+

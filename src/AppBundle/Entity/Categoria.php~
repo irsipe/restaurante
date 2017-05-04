@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Categoria
+ *
+ * @ORM\Table(name="categoria", indexes={@ORM\Index(name="Idx_desces", columns={"descripcion_es"})})
+ * @ORM\Entity
+ */
+class Categoria
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion_es", type="string", length=45, nullable=false)
+     */
+    private $descripcionEs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion_cat", type="string", length=45, nullable=true)
+     */
+    private $descripcionCat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion_en", type="string", length=45, nullable=true)
+     */
+    private $descripcionEn;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idcategoria", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idcategoria;
+
+
+}
+

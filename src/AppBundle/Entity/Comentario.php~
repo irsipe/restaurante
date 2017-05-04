@@ -1,0 +1,54 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Comentario
+ *
+ * @ORM\Table(name="comentario", indexes={@ORM\Index(name="idx_fecha", columns={"fecha"})})
+ * @ORM\Entity
+ */
+class Comentario
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comentario", type="text", length=65535, nullable=true)
+     */
+    private $comentario;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha", type="datetime", nullable=false)
+     */
+    private $fecha;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="valoracion", type="integer", nullable=true)
+     */
+    private $valoracion;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visible", type="boolean", nullable=true)
+     */
+    private $visible;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idcomentario", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idcomentario;
+
+
+}
+

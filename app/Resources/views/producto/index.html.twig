@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Productos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombrees</th>
+                <th>Nombrecat</th>
+                <th>Nombreen</th>
+                <th>Descripciones</th>
+                <th>Descripcioncat</th>
+                <th>Descripcionen</th>
+                <th>Preparaciones</th>
+                <th>Preparacioncat</th>
+                <th>Preparacionen</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Idproducto</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for producto in productos %}
+            <tr>
+                <td><a href="{{ path('producto_show', { 'idproducto': producto.idproducto }) }}">{{ producto.nombreEs }}</a></td>
+                <td>{{ producto.nombreCat }}</td>
+                <td>{{ producto.nombreEn }}</td>
+                <td>{{ producto.descripcionEs }}</td>
+                <td>{{ producto.descripcionCat }}</td>
+                <td>{{ producto.descripcionEn }}</td>
+                <td>{{ producto.preparacionEs }}</td>
+                <td>{{ producto.preparacionCat }}</td>
+                <td>{{ producto.preparacionEn }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>{{ producto.imagen }}</td>
+                <td>{{ producto.idproducto }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('producto_show', { 'idproducto': producto.idproducto }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('producto_edit', { 'idproducto': producto.idproducto }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('producto_new') }}">Create a new producto</a>
+        </li>
+    </ul>
+{% endblock %}
