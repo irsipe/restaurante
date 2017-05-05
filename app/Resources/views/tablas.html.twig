@@ -2,10 +2,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
- 
     <div class="container">
+
         <div class="alert alert-success">
-            Bienvenidos al mantenimiento del restaurante
+            Mantenimiento del restaurante
         </div>
         <a href="{{path('categoria_index')}}"  class="btn btn-success btn-bg">Categoria Productos</a>
         <a href="{{path('cargo_index')}}"  class="btn btn-success btn-bg">Cargos Personal</a>
@@ -17,5 +17,10 @@
         <a href="{{path('comentario_index')}}"  class="btn btn-success btn-bg">Comentarios </a>
         <a href="{{path('cliente_index')}}"  class="btn btn-success btn-bg">Clientes </a>
     </div>
+
+
+
+
+
 {% endblock %}
 {% block jumbotron %}<h1>Mantenimiento Restaurante</h1>{% endblock %}

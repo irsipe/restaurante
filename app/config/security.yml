@@ -8,6 +8,12 @@ security:
             memory: ~
 
     firewalls:
+        secured_area:
+            pattern:    ^/
+            anonymous: ~
+            http_basic:
+                realm: "Secured Demo Area"
+
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -22,3 +28,28 @@ security:
 
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
             #form_login: ~
+    access_control:
+        - { path: ^/cliente$, roles: ROLE_ADMIN }
+        - { path: ^/reserva$, roles: ROLE_ADMIN }
+        - { path: ^/cargo$, roles: ROLE_ADMIN }
+        - { path: ^/categoria$, roles: ROLE_ADMIN }
+        - { path: ^/comentario$, roles: ROLE_ADMIN }
+        - { path: ^/lineamenu$, roles: ROLE_ADMIN }
+        - { path: ^/mesa$, roles: ROLE_ADMIN }
+        - { path: ^/personal$, roles: ROLE_ADMIN }
+        - { path: ^/producto$, roles: ROLE_ADMIN }
+        - { path: ^/reserva$, roles: ROLE_ADMIN }
+        - { path: ^/reservaplato$, roles: ROLE_ADMIN }
+        - { path: ^/tablas$, roles: ROLE_ADMIN }
+        # Descomenta la siguiente línea para proteger también
+        # la propia URL /admin
+        # - { path: ^/admin$, roles: ROLE_ADMIN }
+        
+    providers:
+        in_memory:
+            memory:
+                users:
+                    invitado:  { password: guest, roles: 'ROLE_USER' }
+                    admin: { password: irsipe, roles: 'ROLE_ADMIN' }
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext                
