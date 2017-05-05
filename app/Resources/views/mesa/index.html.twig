@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Mesas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ncomensales</th>
+                <th>Ubicacion</th>
+                <th>Idmesa</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mesa in mesas %}
+            <tr>
+                <td><a href="{{ path('mesa_show', { 'idmesa': mesa.idmesa }) }}">{{ mesa.ncomensales }}</a></td>
+                <td>{{ mesa.ubicacion }}</td>
+                <td>{{ mesa.idmesa }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('mesa_show', { 'idmesa': mesa.idmesa }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('mesa_edit', { 'idmesa': mesa.idmesa }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('mesa_new') }}">Create a new mesa</a>
+        </li>
+    </ul>
+{% endblock %}
