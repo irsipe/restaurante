@@ -5,8 +5,10 @@ security:
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
-            memory: ~
-
+            memory:
+                users:
+                    invitado:  { password: guest, roles: 'ROLE_USER' }
+                    admin: { password: irsipe, roles: 'ROLE_ADMIN' }
     firewalls:
         secured_area:
             pattern:    ^/
@@ -45,11 +47,6 @@ security:
         # la propia URL /admin
         # - { path: ^/admin$, roles: ROLE_ADMIN }
         
-    providers:
-        in_memory:
-            memory:
-                users:
-                    invitado:  { password: guest, roles: 'ROLE_USER' }
-                    admin: { password: irsipe, roles: 'ROLE_ADMIN' }
+  
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext                
