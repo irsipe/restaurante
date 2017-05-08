@@ -1,0 +1,53 @@
+{# empty Twig template #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+
+
+        <div class="alert alert-success">
+            <h1> {{titulo}}</h1>
+        </div>
+        
+        <a href="{{ path(nombreruta~'_new') }}" class="btn btn-success btn-bg">Crear un nuevo registro</a> 
+        </br></br> 
+        <table border="1">
+            <thead>
+                <tr>
+                    {% set cabeceras = cabeceras|merge(['Opciones']) %}
+                    {% for dato in cabeceras %}
+                        <th>{{dato}}</th>
+                    {% endfor %}
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for cargo in datos %}
+                    <tr>
+                        {% set identificador = { (nombreparametro) : attribute(cargo,campoclave)} %}
+
+                        
+                        {% for i in 0..cargo|length %}
+                            <td><a href="{{ path(nombreruta~'_show',  identificador  ) }}">  {{attribute(cargo,campos[i])}}  </a></td>
+                           
+                        {% endfor %}
+
+
+                        <td>
+
+                            <a href="{{ path(nombreruta~'_show',    identificador ) }}" class="btn btn-success btn-bg">Ver</a>
+                            <a href="{{ path(nombreruta~'_edit',    identificador ) }}" class="btn btn-success btn-bg">Modifica</a>
+                            <a href="{{ path(nombreruta~'_delete',  identificador ) }}" class="btn btn-success btn-bg">Borra</a>
+
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+
+    </div>
+{% endblock %}
+
