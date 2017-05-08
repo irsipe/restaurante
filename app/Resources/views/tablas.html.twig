@@ -4,16 +4,18 @@
 {% block body %}
     <div class="container alert alert-success">
         <h1>Mantenimiento del Restaurante</h1>
-     </div>  
+    </div>  
     <div class="container">
         <a href="{{path('categoria_index')}}"  class="btn btn-success btn-bg">Categoria Productos</a>
         <a href="{{path('cargo_index')}}"  class="btn btn-success btn-bg">Cargos Personal</a>
+        <a href="{{path('cliente_index')}}"  class="btn btn-success btn-bg">Clientes </a>
+        <a href="{{path('comentario_index')}}"  class="btn btn-success btn-bg">Comentarios </a>
+        <a href="{{path('menu_index')}}"  class="btn btn-success btn-bg">Menus</a>
+        <a href="{{path('mesa_index')}}"  class="btn btn-success btn-bg">Mesas </a>
         <a href="{{path('producto_index')}}"  class="btn btn-success btn-bg">Productos </a>
         <a href="{{path('personal_index')}}"  class="btn btn-success btn-bg">Personal </a>
-        <a href="{{path('menu_index')}}"  class="btn btn-success btn-bg">Menus</a>
         <a href="{{path('reserva_index')}}"  class="btn btn-success btn-bg">Reservas </a>
-        <a href="{{path('mesa_index')}}"  class="btn btn-success btn-bg">Mesas </a>
-        <a href="{{path('comentario_index')}}"  class="btn btn-success btn-bg">Comentarios </a>
-        <a href="{{path('cliente_index')}}"  class="btn btn-success btn-bg">Clientes </a>
+
+
     </div>
 {% endblock %}

@@ -24,10 +24,28 @@ class ComentarioController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $comentarios = $em->getRepository('AppBundle:Comentario')->findAll();
-
+        $datos = $em->getRepository('AppBundle:Comentario')->findAll();
+        /*
         return $this->render('comentario/index.html.twig', array(
             'comentarios' => $comentarios,
+        ));
+        */
+        
+      
+        $cabecera=array('Registro','Comentario','Fecha','Valoracion','Visible'); 
+        
+        $campos=array('idcomentario','comentario','fecha','valoracion','visible');
+                      
+             
+      
+       return $this->render('muestratabla.html.twig', array(
+       'datos' => $datos,
+       'cabeceras'=>$cabecera,
+       'campos'=>$campos,
+       'campoclave'=>$campos[0],
+       'titulo'=>'Comentarios',
+       'nombreruta'=>'comentario',  
+       'nombreparametro'=>$campos[0],    
         ));
     }
 

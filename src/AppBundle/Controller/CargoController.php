@@ -26,9 +26,11 @@ class CargoController extends Controller
 
         $datos = $em->getRepository('AppBundle:Cargo')->findAll();
 
-       /** return $this->render('cargo/index.html.twig', array(
-       /**     'cargos' => $cargos,
-        ));**/
+       /** 
+       return $this->render('cargo/index.html.twig', array(
+            'cargos' => $cargos,
+        ));
+       **/
        $cabecera=array('Registro','Descripción'); 
        $campos=array('idcargo','descripcion');
       

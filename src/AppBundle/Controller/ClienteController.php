@@ -24,10 +24,30 @@ class ClienteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $clientes = $em->getRepository('AppBundle:Cliente')->findAll();
-
+        $datos = $em->getRepository('AppBundle:Cliente')->findAll();
+        /* 
         return $this->render('cliente/index.html.twig', array(
             'clientes' => $clientes,
+        ));
+        */
+
+        $cabecera=array('Registro','Nombre','Apellido1','Apellido2','Idioma','Fechanacimiento',
+                        'Email','Movil','Tffijo','Direccion','Poblacion',
+                        'Fechaalta','Fechabaja','Descuento','Activo','Nvisitas'); 
+        
+        $campos=array('idcliente','nombre','apellido1','apellido2','idioma','fechanacimiento',
+                      'email','movil','tffijo','direccion','poblacion',
+                      'fechaalta','fechabaja','descuento','activo','nvisitas');  
+                
+      
+       return $this->render('muestratabla.html.twig', array(
+       'datos' => $datos,
+       'cabeceras'=>$cabecera,
+       'campos'=>$campos,
+       'campoclave'=>$campos[0],
+       'titulo'=>'Clientes',
+       'nombreruta'=>'cliente',  
+       'nombreparametro'=>'idcliente',   
         ));
     }
 

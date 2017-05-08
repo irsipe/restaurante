@@ -24,11 +24,11 @@
 
             <tbody>
                 {% for cargo in datos %}
+                    
                     <tr>
                         {% set identificador = { (nombreparametro) : attribute(cargo,campoclave)} %}
 
-                        
-                        {% for i in 0..cargo|length %}
+                        {% for i in 0..campos|length-1 %}
                             <td><a href="{{ path(nombreruta~'_show',  identificador  ) }}">  {{attribute(cargo,campos[i])}}  </a></td>
                            
                         {% endfor %}
