@@ -14,25 +14,12 @@ class DefaultController extends Controller {
      */
     public function indexAction(Request $request) {
         // replace this example code with whatever you need
-        $em = $this->getDoctrine()->getEntityManager();
-        $db = $em->getConnection();
 
-        $query = "select * from menu join lineamenu using(idmenu) where fecha= '20170509' and idcategoria=1;";
-        $stmt = $db->prepare($query);
-        $params = array();
-        $stmt->execute($params);
-        $po1 = $stmt->fetchAll();
+        $po1=$this->menu(1);
+        $po2=$this->menu(2);
+        $po3=$this->menu(3);
         
-        $query = "select * from menu join lineamenu using(idmenu) where fecha= '20170509' and idcategoria=2;";
-        $stmt = $db->prepare($query);
-        $params = array();
-        $stmt->execute($params);
-        $po2 = $stmt->fetchAll();      
-        $query = "select * from menu join lineamenu using(idmenu) where fecha= '20170509' and idcategoria=3;";
-        $stmt = $db->prepare($query);
-        $params = array();
-        $stmt->execute($params);    
-        $po3 = $stmt->fetchAll();
+        
         
 
         return $this->render('default/index.html.twig', [                   
@@ -60,5 +47,34 @@ class DefaultController extends Controller {
     public function dondeEstamos() {
         return $this->render('dondeestamos.html.twig');
     }
-
+    
+    /**
+     * @Route("/{dia}", name="menudiario")
+     */
+    
+    public function menu($plato){
+        $em = $this->getDoctrine()->getEntityManager();
+        $db = $em->getConnection();
+        $query = "select * from menu join lineamenu using(idmenu) where fecha= :fechahoy and idcategoria=".$plato;
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(':fechahoy', $hoy);
+        $hoy=date("Ymd"); 
+        $stmt->execute( );
+        $po1 = $stmt->fetchAll();
+        return $po1;
+    }
 }
+
+
+/*
+ * $query = "select * from menu join lineamenu using(idmenu) where fecha= '20170509' and idcategoria=2";
+        $stmt = $db->prepare($query);
+        $params = array();
+        $stmt->execute($params);
+        $po2 = $stmt->fetchAll();      
+        $query = "select * from menu join lineamenu using(idmenu) where fecha= '20170509' and idcategoria=3";
+        $stmt = $db->prepare($query);
+        $params = array();
+        $stmt->execute($params);    
+        $po3 = $stmt->fetchAll();
+ */
