@@ -18,12 +18,13 @@ class DefaultController extends Controller {
         $po1=$this->menu(1);
         $po2=$this->menu(2);
         $po3=$this->menu(3);
-        
+        $precio=$this->menuPrecio();
+               
         
         
 
         return $this->render('default/index.html.twig', [                   
-            "menu1"=> $po1,"menu2"=> $po2,"menu3"=> $po3,
+            "menu1"=> $po1,"menu2"=> $po2,"menu3"=> $po3,"precio"=> $precio,
         ]);
     }
 
@@ -63,8 +64,6 @@ class DefaultController extends Controller {
         $po1 = $stmt->fetchAll();
         return $po1;
     }
-}
-
 
 /*
  * $query = "select * from menu join lineamenu using(idmenu) where fecha= '20170509' and idcategoria=2";
@@ -78,3 +77,23 @@ class DefaultController extends Controller {
         $stmt->execute($params);    
         $po3 = $stmt->fetchAll();
  */
+
+
+
+
+   /**
+     * @Route("/", name="preciomenu")
+     */
+    
+    public function menuPrecio(){
+        $em = $this->getDoctrine()->getEntityManager();
+        $db = $em->getConnection();
+        $query = "select * from menu   where fecha= :fechahoy";
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(':fechahoy', $hoy);
+        $hoy=date("Ymd"); 
+        $stmt->execute( );
+        $po1 = $stmt->fetch();
+        return $po1;
+    }
+}
