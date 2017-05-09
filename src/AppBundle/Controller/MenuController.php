@@ -24,10 +24,27 @@ class MenuController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $menus = $em->getRepository('AppBundle:Menu')->findAll();
-
+        $datos = $em->getRepository('AppBundle:Menu')->findAll();
+        /*
         return $this->render('menu/index.html.twig', array(
             'menus' => $menus,
+        ));
+         
+        */
+          
+        $cabecera=array('Registro','Fecha','Precio','Ventas'); 
+        $campos=array('idmenu','fecha','precio','cantidadventas');
+        $tipos=array('','d','','');
+      
+       return $this->render('muestratabla.html.twig', array(
+       'datos' => $datos,
+       'cabeceras'=>$cabecera,
+       'campos'=>$campos,
+       'campoclave'=>$campos[0],
+       'titulo'=>'Menus',
+       'nombreruta'=>'menu',  
+       'nombreparametro'=>$campos[0],
+       'tipos'=>$tipos,
         ));
     }
 

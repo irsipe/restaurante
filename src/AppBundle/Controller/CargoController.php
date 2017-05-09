@@ -33,7 +33,7 @@ class CargoController extends Controller
        **/
        $cabecera=array('Registro','Descripción'); 
        $campos=array('idcargo','descripcion');
-      
+       $tipos=array('','');
       
        return $this->render('muestratabla.html.twig', array(
        'datos' => $datos,
@@ -42,7 +42,8 @@ class CargoController extends Controller
        'campoclave'=>$campos[0],
        'titulo'=>'Cargos empleados',
        'nombreruta'=>'cargo',  
-       'nombreparametro'=>'idcargo',   
+       'nombreparametro'=>$campos[0],
+       'tipos'=>$tipos,
         ));
     }
 

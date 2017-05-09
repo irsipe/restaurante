@@ -34,7 +34,7 @@ class CategoriaController extends Controller
          
         $cabecera=array('Registro','Descripcion ES','Descripcion CAT','Descripcion IN'); 
         $campos=array('idcategoria','descripcionEs','descripcionCat','descripcionEn');
-      
+        $tipos=array('','','','');
       
        return $this->render('muestratabla.html.twig', array(
        'datos' => $datos,
@@ -43,7 +43,8 @@ class CategoriaController extends Controller
        'campoclave'=>$campos[0],
        'titulo'=>'Categorias Productos',
        'nombreruta'=>'categoria',  
-       'nombreparametro'=>'idcategoria',   
+       'nombreparametro'=>$campos[0],
+       'tipos'=>$tipos,
         ));
     }
 
