@@ -24,10 +24,26 @@ class CategoriaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $categorias = $em->getRepository('AppBundle:Categoria')->findAll();
+        $datos = $em->getRepository('AppBundle:Categoria')->findAll();
 
-        return $this->render('categoria/index.html.twig', array(
+        /**
+          return $this->render('categoria/index.html.twig', array(
             'categorias' => $categorias,
+        ));
+        **/
+         
+        $cabecera=array('Registro','Descripcion ES','Descripcion CAT','Descripcion IN'); 
+        $campos=array('idcategoria','descripcionEs','descripcionCat','descripcionEn');
+      
+      
+       return $this->render('muestratabla.html.twig', array(
+       'datos' => $datos,
+       'cabeceras'=>$cabecera,
+       'campos'=>$campos,
+       'campoclave'=>$campos[0],
+       'titulo'=>'Categorias Productos',
+       'nombreruta'=>'categoria',  
+       'nombreparametro'=>'idcategoria',   
         ));
     }
 

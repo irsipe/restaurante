@@ -24,10 +24,25 @@ class CargoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $cargos = $em->getRepository('AppBundle:Cargo')->findAll();
+        $datos = $em->getRepository('AppBundle:Cargo')->findAll();
 
-        return $this->render('cargo/index.html.twig', array(
+       /** 
+       return $this->render('cargo/index.html.twig', array(
             'cargos' => $cargos,
+        ));
+       **/
+       $cabecera=array('Registro','Descripción'); 
+       $campos=array('idcargo','descripcion');
+      
+      
+       return $this->render('muestratabla.html.twig', array(
+       'datos' => $datos,
+       'cabeceras'=>$cabecera,
+       'campos'=>$campos,
+       'campoclave'=>$campos[0],
+       'titulo'=>'Cargos empleados',
+       'nombreruta'=>'cargo',  
+       'nombreparametro'=>'idcargo',   
         ));
     }
 
