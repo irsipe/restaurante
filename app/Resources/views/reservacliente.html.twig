@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <body>
+
+        <!--  start header  -->
+        <header>
+            <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<script src="jquery.ui.datepicker-es.js"></script>
+<script>
+$(function () {
+$.datepicker.setDefaults($.datepicker.regional["es"]);
+$("#datepicker").datepicker({
+
+firstDay: 1,
+onSelect: function (date) {
+alert(date)
+},
+});
+});
+</script>
+            <div class="wrapper">
+                <div class="logo">
+                    <a href=""><img src="img/prueba1.jpg" alt="Resto" title=""/></a>
+                </div>
+
+                <nav>
+                    <ul>
+                        <!--<li><a href="" class="active">Home</a></li>-->
+                        <li><a href="">Nuestra historia</a></li>
+                        <li><a href="">Menú</a></li>
+                        <li><a href="{{ path('reserva_new') }}">Reservas</a></li>
+                        <li><a href="">Novedades</a></li>
+                        <li><a href="">Área clientes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header><!--  end header  -->
+
+
+        <!--  start hero  -->
+        <section class="hero">
+            <div class="caption">
+                <h3><strong>Casa Irene</strong></h3>
+                <h4>
+                    <span class="rsep"></span>
+                    El restaurante donde te sientes en casa.
+                    <span class="lsep"></span>
+                </h4>
+
+            </div>
+        </section><!--  end hero  -->
+        
+        
+<div style="position: absolute; top: 700px; left: 300px">
+    <h2>Reseva tu mesa :</h2>
+    <form action="." oninput="range_control_value.value = range_control.valueAsNumber">
+<p>
+Nombre: 
+<br />
+<input type="text" name="name_control" autofocus required />
+<br />
+<br />
+Correo Electrónico: 
+<br />
+<input type="email" name="email_control" required />
+<br />
+<br />
+
+Número (min 1, max 10): 
+<br />
+<input type="number" name="number_control" min="1" max="10" value="1" />
+<br />
+<br />
+Teléfono: 
+<br />
+<input type="tel" name="tel_control" />
+<br />
+<br />
+<input type="submit" value="Enviar" />
+</p>
+</div>
+        <div style="position: absolute; top: 735px; left: 800px" >
+            Fecha: <input type="text" id="datepicker" />
+            
+        </div>
+           
+        
+    </boby>
+    
+</html>
+{% endblock %}
+
+               
