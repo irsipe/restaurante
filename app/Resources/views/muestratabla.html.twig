@@ -9,7 +9,8 @@
             <h1> {{titulo}}</h1>
         </div>
         
-        <a href="{{ path(nombreruta~'_new') }}" class="btn btn-success btn-bg">Crear un nuevo registro</a> 
+        <a href="{{ path(nombreruta~'_new') }}" class="btn btn-success btn-bg">Crear un nuevo registro</a>&nbsp&nbsp &nbsp &nbsp  
+        <a href="{{ path('tablas') }}" class="btn btn-success btn-bg">volver</a> 
         </br></br> 
         <table border="1">
             <thead>
@@ -31,7 +32,7 @@
                         {% for i in 0..campos|length-1 %}
                             {% if tipos[i]=='d' %}
                              
-                                <td><a href="{{ path(nombreruta~'_show',  identificador  ) }}">  {{attribute(cargo,campos[i])|date('Y-m-d H:i:s')}}  </a></td>
+                                <td><a href="{{ path(nombreruta~'_show',  identificador  ) }}">  {{attribute(cargo,campos[i])|date('Y-m-d H:i:s') }}  </a></td>
  
                             
                             {% else %}
@@ -75,5 +76,7 @@
                                               No
                                           {% endif %}  
                                      </a></td>
+
+|localizeddate('long', 'short')
 #}
 

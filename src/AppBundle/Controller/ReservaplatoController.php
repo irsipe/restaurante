@@ -24,11 +24,29 @@ class ReservaplatoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $reservaplatos = $em->getRepository('AppBundle:Reservaplato')->findAll();
-
+        $datos = $em->getRepository('AppBundle:Reservaplato')->findAll();
+        
+        $cabecera=array('Registro','Reserva','Menu dia','Plato');
+        
+        $campos=array('idreservaplato','idreserva','idlineamenu','idproducto');
+            
+        $tipos=array('','','','');
+    
+        return $this->render('muestratabla.html.twig', array(
+       'datos' => $datos,
+       'cabeceras'=>$cabecera,
+       'campos'=>$campos,
+       'campoclave'=>$campos[0],
+       'titulo'=>'Reserva Platos',
+       'nombreruta'=>'reservaplato',  
+       'nombreparametro'=>$campos[0],
+       'tipos'=>$tipos,    
+        ));
+        /*
         return $this->render('reservaplato/index.html.twig', array(
             'reservaplatos' => $reservaplatos,
         ));
+        */
     }
 
     /**

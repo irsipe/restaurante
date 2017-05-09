@@ -24,11 +24,31 @@ class LineamenuController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $lineamenus = $em->getRepository('AppBundle:Lineamenu')->findAll();
-
+        $datos = $em->getRepository('AppBundle:Lineamenu')->findAll();
+        
+        //print_r($datos);
+        $cabecera=array('Registro','Nombreplato ES','Nombreplato CAT','Nombreplato EN');
+        
+        $campos=array('idlineamenu','nombreplatoEs','nombreplatoCat','nombreplatoEn');
+            
+        $tipos=array('','','','','','');
+    
+        return $this->render('muestratabla.html.twig', array(
+       'datos' => $datos,
+       'cabeceras'=>$cabecera,
+       'campos'=>$campos,
+       'campoclave'=>$campos[0],
+       'titulo'=>'Lineas Menu',
+       'nombreruta'=>'lineamenu',  
+       'nombreparametro'=>$campos[0],
+       'tipos'=>$tipos,    
+        ));
+        /*
         return $this->render('lineamenu/index.html.twig', array(
             'lineamenus' => $lineamenus,
         ));
+         
+         */
     }
 
     /**

@@ -24,11 +24,31 @@ class PersonalController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $personals = $em->getRepository('AppBundle:Personal')->findAll();
-
+        $datos = $em->getRepository('AppBundle:Personal')->findAll();
+        
+        $cabecera=array('Registro','Nombre','Apellido1','Apellido2','Nacionalidad'
+            ,'Telefono Fijo','Movil','Email','Direccion','Poblacion','Fecha de nacimiento');
+        
+        $campos=array('idremesa','Nombre','Apellido1','Apellido2','Nacionalidad'
+            ,'Telefonofijo','Movil','Email','Direccion','Poblacion','Fechanacimiento');
+        $tipos=array('','','','','','','','','','d');
+    
+        return $this->render('muestratabla.html.twig', array(
+       'datos' => $datos,
+       'cabeceras'=>$cabecera,
+       'campos'=>$campos,
+       'campoclave'=>$campos[0],
+       'titulo'=>'Personal',
+       'nombreruta'=>'personal',  
+       'nombreparametro'=>$campos[0],
+       'tipos'=>$tipos,    
+        ));
+        /* 
         return $this->render('personal/index.html.twig', array(
             'personals' => $personals,
         ));
+         
+        */
     }
 
     /**

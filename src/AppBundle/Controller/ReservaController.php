@@ -24,11 +24,28 @@ class ReservaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $reservas = $em->getRepository('AppBundle:Reserva')->findAll();
-
+        $datos = $em->getRepository('AppBundle:Reserva')->findAll();
+        
+        $cabecera=array('Registro','Fecha','Hora','Ncomensales','Nombre'); 
+        $campos=array('idremesa','Fecha','hora','Ncomensales','Nombre');
+        $tipos=array('','d','','',''); 
+         
+        
+        return $this->render('muestratabla.html.twig', array(
+       'datos' => $datos,
+       'cabeceras'=>$cabecera,
+       'campos'=>$campos,
+       'campoclave'=>$campos[0],
+       'titulo'=>'Reservas',
+       'nombreruta'=>'reserva',  
+       'nombreparametro'=>$campos[0],
+       'tipos'=>$tipos,    
+        ));
+        /*
         return $this->render('reserva/index.html.twig', array(
             'reservas' => $reservas,
         ));
+        */
     }
 
     /**

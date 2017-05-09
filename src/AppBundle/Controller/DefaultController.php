@@ -50,6 +50,14 @@ class DefaultController extends Controller {
     }
     
     /**
+     * @Route("/reservacliente", name="reservacliente")
+     */
+    public function reservaCliente() {
+        return $this->render('reservacliente.html.twig');
+    }
+    
+    
+    /**
      * @Route("/{dia}", name="menudiario")
      */
     
