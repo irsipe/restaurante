@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <body>
+
+        <!--  start header  -->
+        <header>
+            <div class="wrapper">
+                <div class="logo">
+                    <p class="lulu"><strong><a href="{{ path ('homepage') }}">Casa Irene</a></strong></p>
+
+
+                </div>
+
+                <nav>
+                    <ul>
+                        <!--<li><a href="" class="active">Home</a></li>-->
+                        <li><a href="">Nuestra historia</a></li>
+                        <li><a href="">Menú</a></li>
+                        <li><a href="">Reservas</a></li>
+                        <li><a href="">Novedades</a></li>
+                        <li><a href="">Área clientes</a></li>
+                        <li><a href="{{ path ('dondeestamos') }}">¿Dónde estamos?</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header><!--  end header  -->
+
+
+        <!--  start hero  -->
+        <section class="hero">
+            <div class="caption">
+                <h3><strong>Casa Irene</strong></h3>
+                <h4>
+                    <span class="rsep"></span>
+                    El restaurante donde te sientes en casa.
+                    <span class="lsep"></span>
+                </h4>
+
+            </div>
+        </section><!--  end hero  -->
+        <div class="espacio">
+         <div class="direccion">
+                <section class="info">
+                    <div class="title">
+                        <h3>Casa Irene</h3>
+                        <span class="separator"></span>
+                    </div></section>
+        
+       
+                        
+                            <p>Almogàvers 123, 08018 Barcelona</p> 
+
+                            <p>933 04 17 27</p>
+                      
+                        <p>
+                            Domingo a jueves
+                            12:30 a 23:30<br/><br/>
+                            Viernes y sábados
+                            13:00 a 01:00
+                        </p>
+                    </div>
+                    
+                    
+                    <div class="googleMap" style="width:100%;height:400px;">
+
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95754.54582923392!2d2.1591404074207503!3d41.410364254091675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2ce5e151b3383c3c!2sNetmind!5e0!3m2!1ses!2ses!4v1494234079122" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+            </div>
+                
+             
+
+                
+      
+      
+
+
+
+
+
+
+
+        <!--  start footer  -->
+        <footer>
+            <div class="wrapper">
+
+
+
+
+
+                <!--  footer copyrights  -->
+
+
+                <section class="copyrights"> 
+
+                    <p class="lulu"><strong>Casa Irene</strong></p>
+
+
+
+
+
+
+
+                    <p>© Todos los derechos reservados 2017.</p>
+
+                </section>
+            </div>
+        </footer><!--  end footer  -->
+        <script src='../ga.js'></script>
+    </body>
+</html>
+
+
+
+{% endblock %}
+

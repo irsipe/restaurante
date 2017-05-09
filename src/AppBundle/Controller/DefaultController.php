@@ -34,6 +34,18 @@ class DefaultController extends Controller
     {
         return new Response('<html><body>Admin page!</body></html>');
     }
+    
+    /**
+     * @Route("/dondestamos", name="dondeestamos")
+     */
+    
+    public function dondeEstamos()
+    {
+         return $this->render('dondeestamos.html.twig' );
+    }
+    
+    
  
+    
   
 }

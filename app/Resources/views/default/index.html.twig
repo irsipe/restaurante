@@ -4,11 +4,12 @@
 
     <body>
 
-        <!--  start header  -->
-        <header>
+       <header>
             <div class="wrapper">
                 <div class="logo">
-                    <a href=""><img src="img/prueba1.jpg" alt="Resto" title=""/></a>
+                      <p class="lulu"><strong><a href="{{ path ('homepage') }}">Casa Irene</a></strong></p>
+                    
+                   
                 </div>
 
                 <nav>
@@ -19,6 +20,7 @@
                         <li><a href="">Reservas</a></li>
                         <li><a href="">Novedades</a></li>
                         <li><a href="">Área clientes</a></li>
+                        <li><a href="{{ path ('dondeestamos') }}">¿Dónde estamos?</a></li>
                     </ul>
                 </nav>
             </div>
@@ -31,161 +33,19 @@
                 <h3><strong>Casa Irene</strong></h3>
                 <h4>
                     <span class="rsep"></span>
-                    El restaurante donde te sientes en casa.
+                    El restaurante donde te sientes como en casa.
                     <span class="lsep"></span>
                 </h4>
 
             </div>
         </section><!--  end hero  -->
-
-
-        <!--  start menu  -->
-        <section class="menu">
-            <div class="wrapper">
-                <div class="menu_title">
-                    <h2>Menú del día</h2>
-                </div>
-
-                <div class="mean_menu">
-                    <!--  left menu row  -->
-                    <article class="lmenu">
-                        <ul>
-                            <li>
-                                <div class="item_info">
-                                    <h3 class="item_name">SOPA</h3>
-                                    <p class="item_desc">Gazpacho suave
-                                        Sopa verde para fortalezer el sitema inmune
-                                        Verduras naranjas y hierbas aromáticas
-                                        Sopa miso con verduras</p>
-                                </div>
-                                <h4 class="price">€50</h4>
-                                <span class="separator"></span>
-                            </li>
-                            <li>
-                                <div class="item_info">
-                                    <h3 class="item_name">ENSALADAS</h3>
-                                    <p class="item_desc">Ensalada con espaguetis de calabacín, champiñones, rabanitos y aceitunas
-                                        Ensalada con fresas, espinacas, queso de cabra y nueces</p>
-                                </div>
-                                <h4 class="price">€20</h4>
-                                <span class="separator"></span>
-                            </li>
-                            <li>
-                                <div class="item_info">
-                                    <h3 class="item_name">PLATOS PRINCIPALES</h3>
-                                    <p class="item_desc">Timbal de lentejas con aguacate y canónigos
-                                        Huevos revueltos con mijo, ajos tiernos y champiñones
-                                        Buda bol con arroz integral, brócoli, col lombarda, rúcula, garbanzos, salsa de cacahuetes y coco</p>
-                                </div>
-                                <h4 class="price">$25</h4>
-                                <span class="separator"></span>
-                            </li>
-                          
-                        </ul>
-                    </article>
-
-
-                    </ul>
-                    </article>
-                </div>
-
-                <!--  hidden menu items  -->
-                <div class="hidden_items">
-                    <!--  left menu row  -->
-                    <article class="lmenu">
-                        <ul>
-                            <li>
-                                <div class="item_info">
-                                    <h3 class="item_name">Voluptate cillum fugiat.</h3>
-                                    <p class="item_desc">Cheese, tomato, mushrooms, onions.</p>
-                                </div>
-                                <h4 class="price">$50</h4>
-                                <span class="separator"></span>
-                            </li>
-                            <li>
-                                <div class="item_info">
-                                    <h3 class="item_name">Voluptate cillum fugiat.</h3>
-                                    <p class="item_desc">Cheese, tomato, mushrooms, onions.</p>
-                                </div>
-                                <h4 class="price">$50</h4>
-                                <span class="separator"></span>
-                            </li>
-                            <li>
-                                <div class="item_info">
-                                    <h3 class="item_name">Voluptate cillum fugiat.</h3>
-                                    <p class="item_desc">Cheese, tomato, mushrooms, onions.</p>
-                                </div>
-                                <h4 class="price">$50</h4>
-                                <span class="separator"></span>
-                            </li>
-                            <li>
-                                <div class="item_info">
-                                    <h3 class="item_name">Voluptate cillum fugiat.</h3>
-                                    <p class="item_desc">Cheese, tomato, mushrooms, onions.</p>
-                                </div>
-                                <h4 class="price">$50</h4>
-                                <span class="separator"></span>
-                            </li>
-                        </ul>
-                    </article>
-
-                    <!--  right menu row  -->
-                    <article class="rmenu">
-                        <ul>
-                            <li>
-                                <div class="item_info">
-                                    <h3 class="item_name">Voluptate cillum fugiat.</h3>
-                                    <p class="item_desc">Cheese, tomato, mushrooms, onions.</p>
-                                </div>
-                                <h4 class="price">$50</h4>
-                                <span class="separator"></span>
-                            </li>
-                            <li>
-                                <div class="item_info">
-                                    <h3 class="item_name">Voluptate cillum fugiat.</h3>
-                                    <p class="item_desc">Cheese, tomato, mushrooms, onions.</p>
-                                </div>
-                                <h4 class="price">$50</h4>
-                                <span class="separator"></span>
-                            </li>
-                            <li>
-                                <div class="item_info">
-                                    <h3 class="item_name">Voluptate cillum fugiat.</h3>
-                                    <p class="item_desc">Cheese, tomato, mushrooms, onions.</p>
-                                </div>
-                                <h4 class="price">$50</h4>
-                                <span class="separator"></span>
-                            </li>
-                            <li>
-                                <div class="item_info">
-                                    <h3 class="item_name">Voluptate cillum fugiat.</h3>
-                                    <p class="item_desc">Cheese, tomato, mushrooms, onions.</p>
-                                </div>
-                                <h4 class="price">$50</h4>
-                                <span class="separator"></span>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-
-                <div class="load-more">
-                    <a href="#" id="more_items">
-                        Menú del día
-                    
-                        <hr/>
-                        <span class="bottom_arrow"></span>
-                    </a>
-                </div>
-            </div>
-        </section><!--  end menu  -->
-
-
+        
         <!--  start featured dishes  -->
         <section class="featured_dishes">
             <div class="wrapper">
                 <section class="info">
                     <div class="title">
-                        <h3>Featured Dishes</h3>
+                        <h3>Platos destacados</h3>
                         <span class="separator"></span>
                     </div>
                     <div class="slider_nav" id="slider_nav">
@@ -403,6 +263,64 @@
         </section><!--  end featured_dishes  -->
 
 
+        <!--  start menu  -->
+        <section class="menu">
+            <div class="wrapper">
+                <div class="menu_title">
+                    <h2>Menú del día</h2>
+                </div>
+
+                <div class="mean_menu">
+                    <!--  left menu row  -->
+                    <article class="lmenu">
+                        <ul>
+                            <li>
+                                <div class="item_info">
+                                    <h3 class="item_name">Holaaaaaa, arreglenme que estoy mal!!!!!!!!SOPA</h3>
+                                    <p class="item_desc">Gazpacho suave
+                                        Sopa verde para fortalezer el sitema inmune
+                                        Verduras naranjas y hierbas aromáticas
+                                        Sopa miso con verduras</p>
+                                </div>
+                              
+                                <span class="separator"></span>
+                            </li>
+                            <li>
+                                <div class="item_info">
+                                    <h3 class="item_name">ENSALADAS</h3>
+                                    <p class="item_desc">Ensalada con espaguetis de calabacín, champiñones, rabanitos y aceitunas
+                                        Ensalada con fresas, espinacas, queso de cabra y nueces</p>
+                                </div>
+                                
+                                <span class="separator"></span>
+                            </li>
+                            <li>
+                                <div class="item_info">
+                                    <h3 class="item_name">PLATOS PRINCIPALES</h3>
+                                    <p class="item_desc">Timbal de lentejas con aguacate y canónigos
+                                        Mijo, ajos tiernos y champiñones
+                                        Buda bol con arroz integral, brócoli, col lombarda, rúcula, garbanzos, salsa de cacahuetes y coco</p>
+                                </div>
+                               
+                                <span class="separator"></span>
+                            </li>
+
+                        </ul>
+                    </article>
+
+
+                    </ul>
+                    </article>
+                </div>
+
+               
+            </div>
+        </section><!--  end menu  -->
+
+
+        
+
+
         <!--  start gallery  -->
         <section class="gallery">
             <div class="wrapper">
@@ -456,28 +374,38 @@
                 <!-- adresse1  -->
                 <section class="adress">
                     <p>Almogàvers 123, 08018 Barcelona</p> 
-                   
+
                     <p class="phone">933 04 17 27</p>
                 </section>
 
-                
+
                 <!--  footer navigation  -->
                 <section class="footer_nav">
                     <nav>
                         <ul>
                             <li><a href="">Blog</a></li>
-                            <li><a href="">Careers</a></li>
-                            <li><a href="">Privacy Policy</a></li>
-                            <li><a href="">Contact</a></li>
+                            <li><a href="">Reservas</a></li>
+                            <li><a href="">condiciones y terminos legales</a></li>
+                            <li><a href="">Contacto</a></li>
                         </ul>
                     </nav>
                 </section>
 
                 <!--  footer copyrights  -->
-                <section class="copyrights">
-                    <img src="img/footer_logo.png" class="footer_logo" alt="" title="">
+               
+                
+                <section class="copyrights"> 
+                     
+                <p class="lulu"><strong>Casa Irene</strong></p>
+               
+
+            
+                     
+            
+      
+                    
                     <p>© Todos los derechos reservados 2017.</p>
-                    <p>Find  More at <a href="http://pixelhint.com" target="_blank">Pixelhint.com</a></p>	
+
                 </section>
             </div>
         </footer><!--  end footer  -->

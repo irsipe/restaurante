@@ -152,6 +152,23 @@ header .logo{
     margin-top: 40px;
 }
 
+header .logo .lulu {
+    
+    color: #3b3b3b;
+    font-family: "wcmanonegrabta";
+    font-size: 50px;
+    letter-spacing: -5px;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+header .logo .lulu  a{
+    text-decoration: none;
+     color: #3b3b3b;
+    
+}
+
 header nav{
     float: right;
 }
@@ -196,7 +213,7 @@ header nav ul li a:hover{
     width: 100%;
     height: 570px;
     position: relative;
-    background: url('../img/hero.jpg') no-repeat;     
+    background-image:  url('../img/prueba23.jpg');     
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -586,6 +603,20 @@ header nav ul li a:hover{
     vertical-align: middle;
 }
 
+#googleMap{ 
+    position: relative;   
+   float:right;
+}
+
+.direccion{
+    
+    margin: 50px;
+    float:left;
+}
+.espacio {
+    margin-top: 100px;
+    margin-left: 350px;
+}
 
 
 
@@ -597,7 +628,7 @@ header nav ul li a:hover{
 /*    footer    */
 footer{
     width: 100%;
-    margin-top: 100px;
+    margin-top: 200px;
     padding: 100px 0;
     background: #3b3b3b;
     overflow: hidden;
@@ -676,3 +707,15 @@ footer .copyrights p a{
     color: #ffffff;
     text-decoration: none;
 }
+
+footer .copyrights .lulu {
+    color: #fff;
+    font-family: "wcmanonegrabta";
+    font-size: 70px;
+    letter-spacing: -5px;
+    margin: 0;
+    padding: 0px;
+    font-weight: normal;
+}
+
+
