@@ -24,11 +24,32 @@ class ProductoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $productos = $em->getRepository('AppBundle:Producto')->findAll();
-
+        $datos = $em->getRepository('AppBundle:Producto')->findAll();
+        $cabecera=array('Registro','Nombre ES','Nombre CAT','Nombre EN',
+                                   'Descripcion ES','Descripcion CAT','Descripcion EN',
+                                   'Preparacion ES','Preparacion CAT','Preparacion EN',
+                                   'Precio' ,'Imagen'); 
+        $campos=array('idmesa','Nombrees','Nombrecat','Nombreen','Descripciones','Descripcioncat',
+                    'Descripcionen','Preparaciones','Preparacioncat','Preparacionen','Precio','Imagen');
+        $tipos=array('','','','','','','','','','',''); 
+          
+        
+        return $this->render('muestratabla.html.twig', array(
+       'datos' => $datos,
+       'cabeceras'=>$cabecera,
+       'campos'=>$campos,
+       'campoclave'=>$campos[0],
+       'titulo'=>'Productos',
+       'nombreruta'=>'producto',  
+       'nombreparametro'=>$campos[0],
+       'tipos'=>$tipos,    
+        ));
+        /*
         return $this->render('producto/index.html.twig', array(
             'productos' => $productos,
         ));
+          
+        */
     }
 
     /**

@@ -24,11 +24,28 @@ class MesaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $mesas = $em->getRepository('AppBundle:Mesa')->findAll();
-
+        $datos = $em->getRepository('AppBundle:Mesa')->findAll();
+        $cabecera=array('Registro','NComensales','Ubicación'); 
+        $campos=array('idmesa','ncomensales','ubicacion');
+        $tipos=array('','',''); 
+          
+        
+        return $this->render('muestratabla.html.twig', array(
+       'datos' => $datos,
+       'cabeceras'=>$cabecera,
+       'campos'=>$campos,
+       'campoclave'=>$campos[0],
+       'titulo'=>'Mesas',
+       'nombreruta'=>'mesa',  
+       'nombreparametro'=>$campos[0],
+       'tipos'=>$tipos,    
+        ));
+        /*
         return $this->render('mesa/index.html.twig', array(
             'mesas' => $mesas,
         ));
+          
+         */
     }
 
     /**

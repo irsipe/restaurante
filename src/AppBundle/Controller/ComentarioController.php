@@ -35,7 +35,7 @@ class ComentarioController extends Controller
         $cabecera=array('Registro','Comentario','Fecha','Valoracion','Visible'); 
         
         $campos=array('idcomentario','comentario','fecha','valoracion','visible');
-                      
+        $tipos=array('','','d','','');              
              
       
        return $this->render('muestratabla.html.twig', array(
@@ -45,7 +45,8 @@ class ComentarioController extends Controller
        'campoclave'=>$campos[0],
        'titulo'=>'Comentarios',
        'nombreruta'=>'comentario',  
-       'nombreparametro'=>$campos[0],    
+       'nombreparametro'=>$campos[0], 
+       'tipos'=>$tipos,
         ));
     }
 

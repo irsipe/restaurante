@@ -29,8 +29,25 @@
                         {% set identificador = { (nombreparametro) : attribute(cargo,campoclave)} %}
 
                         {% for i in 0..campos|length-1 %}
-                            <td><a href="{{ path(nombreruta~'_show',  identificador  ) }}">  {{attribute(cargo,campos[i])}}  </a></td>
-                           
+                            {% if tipos[i]=='d' %}
+                             
+                                <td><a href="{{ path(nombreruta~'_show',  identificador  ) }}">  {{attribute(cargo,campos[i])|date('Y-m-d H:i:s')}}  </a></td>
+ 
+                            
+                            {% else %}
+                                {% if tipos[i]=='h' %}
+             
+                                 
+ 
+                            
+                              {% else %}
+                                  
+                                <td><a href="{{ path(nombreruta~'_show',  identificador  ) }}">  {{attribute(cargo,campos[i])}}  </a></td>
+ 
+                              {% endif %}
+                            
+                            {% endif %}
+                             
                         {% endfor %}
 
 
@@ -50,4 +67,13 @@
 
     </div>
 {% endblock %}
+{#  
+<td><a href="{{ path(nombreruta~'_show',  identificador  ) }}"> 
+                                          {% if   {{attribute(cargo,campos[i])}}  %}
+                                              Si
+                                          {% else %}
+                                              No
+                                          {% endif %}  
+                                     </a></td>
+#}
 

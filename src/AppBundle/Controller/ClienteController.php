@@ -38,7 +38,7 @@ class ClienteController extends Controller
         $campos=array('idcliente','nombre','apellido1','apellido2','idioma','fechanacimiento',
                       'email','movil','tffijo','direccion','poblacion',
                       'fechaalta','fechabaja','descuento','activo','nvisitas');  
-                
+        $tipos=array('','','','','','d','','','','','','d','d','','b','');        
       
        return $this->render('muestratabla.html.twig', array(
        'datos' => $datos,
@@ -47,7 +47,8 @@ class ClienteController extends Controller
        'campoclave'=>$campos[0],
        'titulo'=>'Clientes',
        'nombreruta'=>'cliente',  
-       'nombreparametro'=>'idcliente',   
+       'nombreparametro'=>$campos[0],
+       'tipos'=>$tipos,    
         ));
     }
 
