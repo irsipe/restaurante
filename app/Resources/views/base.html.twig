@@ -11,27 +11,14 @@
         <script type="text/javascript" src="{{ asset('/js/easing.js')}}"></script>
         <script type="text/javascript" src="{{ asset('/js/main.js')}}"></script>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-       {% block stylesheets %}{% endblock %}
-       <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <title>{% block title %}Casa Irene!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
 {% block jumbotron %}{% endblock %}
-</body>
-        <title>{% block title %}Casa Irene{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}
-         <!--  start header  -->
-        
-        
-        
-        
-        {% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+</body>   
+
 </html>
