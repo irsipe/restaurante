@@ -193,4 +193,9 @@ class Lineamenu
     {
         return $this->idcategoria;
     }
+    
+    public function __toString() {
+         return $this->idlineamenu.' '.$this->nombreplatoEs;
+        ;
+    }
 }

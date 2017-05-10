@@ -15,7 +15,7 @@ class DefaultController extends Controller {
     public function indexAction(Request $request) {
         // replace this example code with whatever you need
 
-        $po1=$this->menu(1);
+        $po1=$this->menu(1,'es');
         $po2=$this->menu(2);
         $po3=$this->menu(3);
         $precio=$this->menuPrecio();

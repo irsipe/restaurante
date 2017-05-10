@@ -56,7 +56,7 @@ class CategoriaController extends Controller
      */
     public function newAction(Request $request)
     {
-        $categorium = new Categorium();
+        $categorium = new Categoria();
         $form = $this->createForm('AppBundle\Form\CategoriaType', $categorium);
         $form->handleRequest($request);
 

@@ -125,4 +125,8 @@ class Menu
     {
         return $this->idmenu;
     }
+     public function __toString() {
+         return $this->idmenu.'  '.$this->fecha->format("d-m-Y");
+        ;
+    }
 }

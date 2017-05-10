@@ -125,4 +125,9 @@ class Categoria
     {
         return $this->idcategoria;
     }
+    
+       public function __toString() {
+         return $this->idcategoria.' '.$this->descripcionEs;
+        ;
+    }
 }
