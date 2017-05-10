@@ -149,8 +149,8 @@ header{
 }
 
 header .logo{
-    float: left;
-    margin-top: 40px;
+   
+    margin: 20px;
     background-color: white;
 }
 
@@ -172,7 +172,7 @@ header .logo .lulu  a{
 }
 
 header nav{
-    float: right;
+    
 }
 
 header nav ul{
@@ -625,17 +625,17 @@ header nav ul li a:hover{
   Icons
  ================= */
 
-/* footer social icons */
+/*  social icons */
 ul.social-network {
     list-style: none;
     display: inline;
 
-    margin-left:0 !important;
+    margin:0;
     padding: 0;
 }
 ul.social-network li {
     display: inline;
-    margin: 0 5px;
+    margin: 0.3px;
 }
 
 
@@ -676,13 +676,13 @@ a.socialIcon:hover, .socialHoverClass {
     border-radius:50%;
     background-color: black;
     text-align:center;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     font-size:20px;
 }
 .social-circle li i {
     margin:0;
-    line-height:50px;
+    line-height:40px;
     text-align: center;
 }
 
@@ -773,6 +773,8 @@ a {
 
 
 
+
+
 /*    footer    */
 footer{
     width: 100%;
@@ -785,8 +787,8 @@ footer{
 footer section{
     display: block;
     width: 230px;
-    margin-right: 60px;
-    float: left;
+    margin-left: 40%;
+    
 }
 
 footer section:last-child{
@@ -847,14 +849,10 @@ footer .copyrights p{
     font-weight: lighter;
     line-height: 32px;
     letter-spacing: 1px;
+    width: 1000px;
 }
 
-footer .copyrights p a{
-    font-family: "aleo-bold", arial;
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-}
+
 
 footer .copyrights .lulu {
     color: #fff;
