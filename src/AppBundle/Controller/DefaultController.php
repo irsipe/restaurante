@@ -77,6 +77,20 @@ class DefaultController extends Controller {
         return $this->render('areaclientes.html.twig');
     }
     
+         /**
+     * @Route("/carta", name="carta")
+     */
+    public function carta() {
+         $em = $this->getDoctrine()->getEntityManager();
+         $db = $em->getConnection();
+        $query = "select * from  producto ";
+         $stmt = $db->prepare($query);
+         $stmt->execute( );
+        $po1 = $stmt->fetchAll();
+        return $this->render('carta.html.twig',["carta"=>$po1] );
+         
+    }
+
     /**
      * @Route("/{dia}", name="menudiario")
      */
