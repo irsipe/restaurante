@@ -56,6 +56,26 @@ class DefaultController extends Controller {
         return $this->render('reservacliente.html.twig');
     }
     
+     /**
+     * @Route("/nuestrahistoria", name="nuestrahistoria")
+     */
+    public function nuestraHistoria() {
+        return $this->render('nuestrahistoria.html.twig');
+    }
+     /**
+     * @Route("/comentarios", name="comentarios")
+     */
+    
+        public function comentarios() {
+        return $this->render('comentarios.html.twig');
+    }
+    
+    /**
+     * @Route("/areaclientes", name="areaclientes")
+     */
+    public function areaClientes() {
+        return $this->render('areaclientes.html.twig');
+    }
     
     /**
      * @Route("/{dia}", name="menudiario")
