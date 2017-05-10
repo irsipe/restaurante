@@ -19,11 +19,11 @@
                     <nav>
                         <ul>
                             <!--<li><a href="" class="active">Home</a></li>-->
-                            <li><a href="">Nuestra historia</a></li>
-                            <li><a href="">Carta</a></li>
+                            <li><a href="{{ path ('nuestrahistoria') }}">Nuestra historia</a></li>
+                            <li><a href="{{ path ('carta') }}">Carta</a></li>
                             <li><a href="{{ path ('reservacliente') }}">Reservas</a></li>
-                            <li><a href="">Comentarios</a></li>
-                            <li><a href="">Área clientes</a></li>
+                            <li><a href="{{ path ('muestracomment') }}">Comentarios</a></li>
+                            <li><a href="{{ path ('areaclientes') }}">Área clientes</a></li>
                             <li><a href="{{ path ('dondeestamos') }}">¿Dónde estamos?</a></li>
                         </ul>
                     </nav>
@@ -68,29 +68,78 @@
 
             </div>
         </section><!--  end hero  -->
-        <!--  footer copyrights  -->
-
-        <div class="col-md-12">
-            <section class="copyrights"> 
-
-                <p class="lulu"><strong>Casa Irene</strong></p>
 
 
+        <p><span class="badge">2</span> Comentarios:</p><br>
+
+        <div class="row">
+            <div class="col-md-2 text-center">
+                <img src="13.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+
+            </div>
+            {% for cargo in datos %}
+                <div class="col-md-10">
+                    <h4>{{cargo.fecha|date('Y-m-d H:i:s') }}</h4>
+                    <h3>Valoración{{cargo.valoracion}}</h3>
+                        
+
+                        <p class="item_desc">{{ cargo.comentario }}</p>
 
 
+                </div>
+            {% endfor %}
 
-
-
-                <p>© Todos los derechos reservados 2017.</p>
-
-            </section>
+            <div class="col-md-10">
+                <h4>Menganita <small>17/01/2017 9:12 PM</small></h4>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <br>
+            </div>
+            <div class="col-md-2 text-center">
+                <img src="14.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+            </div>
+            <div class="col-md-10">
+                <h4>Juanita <small>17/01/2017 8:25 PM</small></h4>
+                <p>I am so happy for you man! Finally. I am looking forward to read about your trendy life. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <br>
+                <p><span class="badge">1</span> Comenta:</p><br>
+                <div class="row">
+                    <div class="col-md-2 text-center">
+                        <img src="15.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+                    </div>
+                    <div class="col-md-10">
+                        <h4>Pepito <small>18/01/2017 8:28 PM</small></h4>
+                        <p>Me too! WOW!</p>
+                        <br>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!--  start footer  -->
+        <footer>
+            <div class="wrapper">
+                <!--  footer copyrights  -->
 
-    </div>
-</footer><!--  end footer  -->
+                <div class="col-md-12">
+                    <section class="copyrights"> 
+
+                        <p class="lulu"><strong>Casa Irene</strong></p>
 
 
-</body>
+
+
+
+
+
+                        <p>© Todos los derechos reservados 2017.</p>
+
+                    </section>
+                </div>
+
+            </div>
+        </footer><!--  end footer  -->
+
+
+    </body>
 </html>
 
 

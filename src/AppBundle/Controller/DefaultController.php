@@ -15,7 +15,7 @@ class DefaultController extends Controller {
     public function indexAction(Request $request) {
         // replace this example code with whatever you need
 
-        $po1=$this->menu(1,'es');
+        $po1=$this->menu(1);
         $po2=$this->menu(2);
         $po3=$this->menu(3);
         $precio=$this->menuPrecio();
@@ -62,19 +62,21 @@ class DefaultController extends Controller {
     public function nuestraHistoria() {
         return $this->render('nuestrahistoria.html.twig');
     }
-     /**
-     * @Route("/comentarios", name="comentarios")
-     */
-    
-        public function comentarios() {
-        return $this->render('comentarios.html.twig');
-    }
     
     /**
      * @Route("/areaclientes", name="areaclientes")
      */
     public function areaClientes() {
         return $this->render('areaclientes.html.twig');
+    }
+    
+     /**
+     * @Route("/muestracomment", name="muestracomment")
+     */
+    public function muestraComentarios() {
+        $em = $this->getDoctrine()->getManager();
+        $datos = $em->getRepository('AppBundle:Comentario')->findAll();
+           return $this->render('comentarios.html.twig', array('datos' => $datos,));
     }
     
     /**

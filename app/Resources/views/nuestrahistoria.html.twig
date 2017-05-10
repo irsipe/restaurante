@@ -19,11 +19,11 @@
                     <nav>
                         <ul>
                             <!--<li><a href="" class="active">Home</a></li>-->
-                            <li><a href="">Nuestra historia</a></li>
-                            <li><a href="">Carta</a></li>
+                            <li><a href="{{ path ('nuestrahistoria') }}">Nuestra historia</a></li>
+                            <li><a href="{{ path ('carta') }}">Carta</a></li>
                             <li><a href="{{ path ('reservacliente') }}">Reservas</a></li>
-                            <li><a href="">Comentarios</a></li>
-                            <li><a href="">Área clientes</a></li>
+                            <li><a href="{{ path ('comentarios') }}">Comentarios</a></li>
+                            <li><a href="{{ path ('areaclientes') }}">Área clientes</a></li>
                             <li><a href="{{ path ('dondeestamos') }}">¿Dónde estamos?</a></li>
                         </ul>
                     </nav>
@@ -39,18 +39,18 @@
                         <li><a href="https://es.linkedin.com/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="mailto:casairene@casairene.com" class="icoEnvelope" title="Envelope"><i class="fa fa-envelope"></i></a></li>
                     </ul>
-
-
+                   
+                    
                 </div>
-                <div class="col-md-2">
-                    <nav>
+                        <div class="col-md-2">
+                             <nav>
                         <ul>
-                            <li> <a href="{{ path ('homepage') }}">ES</a></li>
-                            <li><a href="{{ path ('homepage') }}">CAT</a></li>
-                            <li><a href="{{ path ('homepage') }}">EN</a></li>
-                        </ul>
-                    </nav>
-                </div>
+                        <li> <a href="{{ path ('homepage') }}">ES</a></li>
+                           <li><a href="{{ path ('homepage') }}">CAT</a></li>
+                              <li><a href="{{ path ('homepage') }}">EN</a></li>
+                              </ul>
+                               </nav>
+                    </div>
             </div>
         </header><!--  end header  -->
 

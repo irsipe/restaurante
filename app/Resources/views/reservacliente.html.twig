@@ -1,46 +1,57 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
 
     <body>
 
-        <!--  start header  -->
         <header>
-            <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-            <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-            <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-            <script src="jquery.ui.datepicker-es.js"></script>
-            <script>
-                $(function () {
-                    $.datepicker.setDefaults($.datepicker.regional["es"]);
-                    $("#datepicker").datepicker({
 
-                        firstDay: 1,
-                        onSelect: function (date) {
-                            alert(date)
-                        },
-                    });
-                });
-            </script>
-            <div class="wrapper">
-                <div class="logo">
-                    <a href=""><img src="img/prueba1.jpg" alt="Resto" title=""/></a>
+
+            <div class="row">
+
+                <div class="col-md-2">
+                    <div class="logo">
+                        <p class="lulu"><strong><a href="{{ path ('homepage') }}">Casa Irene</a></strong></p>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav>
+                        <ul>
+                            <!--<li><a href="" class="active">Home</a></li>-->
+                            <li><a href="{{ path ('nuestrahistoria') }}">Nuestra historia</a></li>
+                            <li><a href="{{ path ('carta') }}">Carta</a></li>
+                            <li><a href="{{ path ('reservacliente') }}">Reservas</a></li>
+                            <li><a href="{{ path ('comentarios') }}">Comentarios</a></li>
+                            <li><a href="{{ path ('areaclientes') }}">Área clientes</a></li>
+                            <li><a href="{{ path ('dondeestamos') }}">¿Dónde estamos?</a></li>
+                        </ul>
+                    </nav>
                 </div>
 
-                <nav>
-                    <ul>
-                        <!--<li><a href="" class="active">Home</a></li>-->
-                        <li><a href="">Nuestra historia</a></li>
-                        <li><a href="">Carta</a></li>
-                        <li><a href="{{ path('reserva_new') }}">Reservas</a></li>
-                        <li><a href="">Novedades</a></li>
-                        <li><a href="">Área clientes</a></li>
+
+                <div class="col-md-2">
+                    <br>  
+                    <ul class="social-network social-circle">
+                        <li><a href="https://www.instagram.com/?hl=es" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/?lang=es" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://es.linkedin.com/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="mailto:casairene@casairene.com" class="icoEnvelope" title="Envelope"><i class="fa fa-envelope"></i></a></li>
                     </ul>
-                </nav>
+                   
+                    
+                </div>
+                        <div class="col-md-2">
+                             <nav>
+                        <ul>
+                        <li> <a href="{{ path ('homepage') }}">ES</a></li>
+                           <li><a href="{{ path ('homepage') }}">CAT</a></li>
+                              <li><a href="{{ path ('homepage') }}">EN</a></li>
+                              </ul>
+                               </nav>
+                    </div>
             </div>
-                        
-                        
         </header><!--  end header  -->
 
 
@@ -50,13 +61,13 @@
                 <h3><strong>Casa Irene</strong></h3>
                 <h4>
                     <span class="rsep"></span>
-                    El restaurante donde te sientes en casa.
+
+                    El restaurante donde te sientes como en casa.
                     <span class="lsep"></span>
                 </h4>
 
             </div>
         </section><!--  end hero  -->
-
 
         <div style="position: absolute; top: 700px; left: 300px">
             <h2>Reserva tu mesa :</h2>
