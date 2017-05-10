@@ -4,38 +4,48 @@
 
     <body>
         {{parent()}}
+        <div class='row'>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <h2>Reserva tu mesa :</h2>
+                <br>
+                <div id='datosreserva'>
 
-        <div style="position: absolute; top: 700px; left: 300px">
-            <h2>Reserva tu mesa :</h2>
-            <form action="." oninput="range_control_value.value = range_control.valueAsNumber">
-                <p>
-                    Nombre: 
-                    <br />
-                    <input type="text" name="name_control" autofocus required />
-                    <br />
-                    Correo Electrónico: 
-                    <br />
-                    <input type="email" name="email_control" required />
-                    <br />
+                    <form action="." oninput="range_control_value.value = range_control.valueAsNumber">
+                        <p>
+                            Nombre: 
+                            <br />
+                            <input type="text" name="name_control" autofocus required />
+                            <br />
+                            Correo Electrónico: 
+                            <br />
+                            <input type="email" name="email_control" required />
+                            <br />
 
-                    Número (min 1, max 10): 
-                    <br />
-                    <input type="number" name="number_control" min="1" max="10" value="1" />
-                    <br />
+                            Número (min 1, max 10): 
+                            <br />
+                            <input type="number" name="number_control" min="1" max="10" value="1" />
+                            <br />
 
-                    Teléfono: 
+                            Teléfono: 
+                            <br />
+                            <input type="tel" name="tel_control" />
+                            <br />
+                            <br />
+                            <input type="submit" value="Enviar" />
+                        </p>
+                </div>
+                <div id='calendario'>
+                    Fecha:
                     <br />
-                    <input type="tel" name="tel_control" />
-                    <br />
-                    <br />
-                    <input type="submit" value="Enviar" />
-                </p>
+                    <input type="text" id="datepicker" />
+
+                </div>
+            </div>
+            <div class="col-md-2">
+            </div>
         </div>
-        <div style="position: absolute; top: 735px; left: 800px" >
-            Fecha: <input type="text" id="datepicker" />
-
-        </div>
-
         {% include 'footer.html.twig' %}
 
     </body>
@@ -44,6 +54,6 @@
 
 
 {% endblock %}
-
-
+{# style="position: absolute; top: 700px; left: 300px" #}
+{#style="position: absolute; top: 735px; left: 800px" #}
 
