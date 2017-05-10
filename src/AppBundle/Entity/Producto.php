@@ -407,4 +407,9 @@ class Producto
     {
         return $this->idcategoria;
     }
+    
+    public function __toString() {
+         return $this->idproducto.' '.$this->descripcionEs;
+        ;
+    }
 }

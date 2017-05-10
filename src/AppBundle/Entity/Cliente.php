@@ -497,4 +497,9 @@ class Cliente
     {
         return $this->idcliente;
     }
+    
+        public function __toString() {
+         return $this->idcliente.' '.$this->nombre.' '.$this->apellido1;
+        ;
+    }
 }

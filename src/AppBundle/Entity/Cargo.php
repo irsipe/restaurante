@@ -63,4 +63,8 @@ class Cargo
     {
         return $this->idcargo;
     }
+    public function __toString() {
+         return $this->idcargo.' '.$this->descripcion;
+        ;
+    }
 }
