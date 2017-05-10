@@ -6,29 +6,31 @@
 
         <header>
 
-            <div class="wrapper">
-                <div class="col-md-1">
+
+            <div class="row">
+
+                <div class="col-md-2">
                     <div class="logo">
                         <p class="lulu"><strong><a href="{{ path ('homepage') }}">Casa Irene</a></strong></p>
 
                     </div>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <nav>
                         <ul>
                             <!--<li><a href="" class="active">Home</a></li>-->
-                            <li><a href="">Nuestra historia</a></li>
-                            <li><a href="">Menú</a></li>
+                            <li><a href="{{ path ('nuestrahistoria') }}">Nuestra historia</a></li>
+                            <li><a href="{{ path ('carta') }}">Carta</a></li>
                             <li><a href="{{ path ('reservacliente') }}">Reservas</a></li>
-                            <li><a href="">Comentarios</a></li>
-                            <li><a href="">Área clientes</a></li>
+                            <li><a href="{{ path ('comentarios') }}">Comentarios</a></li>
+                            <li><a href="{{ path ('areaclientes') }}">Área clientes</a></li>
                             <li><a href="{{ path ('dondeestamos') }}">¿Dónde estamos?</a></li>
                         </ul>
                     </nav>
                 </div>
 
 
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <br>  
                     <ul class="social-network social-circle">
                         <li><a href="https://www.instagram.com/?hl=es" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
@@ -37,8 +39,18 @@
                         <li><a href="https://es.linkedin.com/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="mailto:casairene@casairene.com" class="icoEnvelope" title="Envelope"><i class="fa fa-envelope"></i></a></li>
                     </ul>
-                    <br>  <br>
+                   
+                    
                 </div>
+                        <div class="col-md-2">
+                             <nav>
+                        <ul>
+                        <li> <a href="{{ path ('homepage') }}">ES</a></li>
+                           <li><a href="{{ path ('homepage') }}">CAT</a></li>
+                              <li><a href="{{ path ('homepage') }}">EN</a></li>
+                              </ul>
+                               </nav>
+                    </div>
             </div>
         </header><!--  end header  -->
 
@@ -400,7 +412,7 @@
 
                 <!--  footer copyrights  -->
 
-                <div class="col-md-3">
+                <div class="col-md-12">
                     <section class="copyrights"> 
 
                         <p class="lulu"><strong>Casa Irene</strong></p>
@@ -419,7 +431,7 @@
             </div>
         </footer><!--  end footer  -->
 
-        <script src='../ga.js'></script>
+    
     </body>
 </html>
 
