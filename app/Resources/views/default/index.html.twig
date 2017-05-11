@@ -4,7 +4,7 @@
 
     <body>
 
-       {{parent()}}
+        {{parent()}}
 
 
         <!--  start featured dishes  -->
@@ -27,7 +27,7 @@
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Fugiat nulla sint</h2></a>
-                            <h3>$30</h3>
+                            <h3>€30</h3>
                         </div>
                         <ul class="rating">
                             <li></li>
@@ -44,7 +44,7 @@
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Daute irure dolor</h2></a>
-                            <h3>$24</h3>
+                            <h3>€24</h3>
                         </div>
                         <ul class="rating">
                             <li></li>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Officia deserunt mollit</h2></a>
-                            <h3>$60</h3>
+                            <h3>€60</h3>
                         </div>
                         <ul class="rating">
                             <li></li>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Pim minim veniam</h2></a>
-                            <h3>$17</h3>
+                            <h3>€17</h3>
                         </div>
                         <ul class="rating">
                             <li></li>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Daute irure dolor</h2></a>
-                            <h3>$24</h3>
+                            <h3>€24</h3>
                         </div>
                         <ul class="rating">
                             <li></li>
@@ -129,7 +129,7 @@
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Officia deserunt mollit</h2></a>
-                            <h3>$60</h3>
+                            <h3>€60</h3>
                         </div>
                         <ul class="rating">
                             <li></li>
@@ -146,7 +146,7 @@
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Pim minim veniam</h2></a>
-                            <h3>$17</h3>
+                            <h3>€17</h3>
                         </div>
                         <ul class="rating">
                             <li></li>
@@ -163,7 +163,7 @@
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Fugiat nulla sint</h2></a>
-                            <h3>$30</h3>
+                            <h3>€30</h3>
                         </div>
                         <ul class="rating">
                             <li></li>
@@ -180,7 +180,7 @@
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Daute irure dolor</h2></a>
-                            <h3>$24</h3>
+                            <h3>€24</h3>
                         </div>
                         <ul class="rating">
                             <li></li>
@@ -197,7 +197,7 @@
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Officia deserunt mollit</h2></a>
-                            <h3>$60</h3>
+                            <h3>€60</h3>
                         </div>
                         <ul class="rating">
                             <li></li>
@@ -214,7 +214,7 @@
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Pim minim veniam</h2></a>
-                            <h3>$17</h3>
+                            <h3>€17</h3>
                         </div>
                         <ul class="rating">
                             <li></li>
@@ -235,7 +235,9 @@
             <div class="wrapper">
                 <div class="menu_title">
                     <h2>Menú del día</h2>
-                    <h2>{{precio.precio}} €</h2>
+                    {% if precio.precio is  defined %}
+                        <h2>{{precio.precio}} €</h2>
+                    {% endif %}
                 </div>
 
                 <div class="mean_menu">
@@ -245,108 +247,110 @@
                             <li>
                                 <div class="item_info">
 
-                                    <h3 class="item_name">PRIMEROS PLATOS</h3>
+                                    <h2 class="item_name">PRIMEROS PLATOS</h2>
                                     {% for cargo in menu1 %}
-                                        <p class="item_desc">{{ cargo.nombreplato_es }}</p>
+                                        <h3 class="item_desc">{{ cargo.nombreplato_es }}</h3>
                                     {% endfor %}
 
                                 </div>
-
+                                <br>       
                                 <span class="separator"></span>
                             </li>
                             <li>
                                 <div class="item_info">
 
-                                    <h3 class="item_name">SEGUNDOS PLATOS</h3>
+                                    <h2 class="item_name">SEGUNDOS PLATOS</h2>
                                     {% for cargo in menu2 %}
-                                        <p class="item_desc">{{ cargo.nombreplato_es }}</p>
+                                        <h3 class="item_desc">{{ cargo.nombreplato_es }}</h3>
                                     {% endfor %}
 
                                 </div>
-
+                                <br>    
                                 <span class="separator"></span>
                             </li>
                             <li>
                                 <div class="item_info">
-                                    <h3 class="item_name">POSTRES</h3>
+                                    <h2 class="item_name">POSTRES</h2>
                                     {% for cargo in menu3 %}
-                                        <p class="item_desc">{{ cargo.nombreplato_es }}</p>
+                                        <h3 class="item_desc">{{ cargo.nombreplato_es }}<h3>
                                     {% endfor %}
                                 </div>
+                                            <br>    
+                                            <span class="separator"></span>
+                                            </li>
 
-                                <span class="separator"></span>
-                            </li>
-
-                        </ul>
-                    </article>
-
-
-                    </ul>
-                    </article>
-                </div>
+                                            </ul>
+                                            </article>
 
 
-            </div>
-        </section><!--  end menu  -->
+                                            </ul>
+                                            </article>
+                                            </div>
 
 
+                                            </div>
+                                            </section><!--  end menu  -->
 
 
 
-        <!--  start gallery  -->
-        <section class="gallery">
-            <div class="wrapper">
-                <section class="info">
-                    <div class="title">
-                        <h3>Galería</h3>
-                        <span class="separator"></span>
-                    </div>
-                </section>
-
-                <div class="media">
-                    <section>
-                        <a href="#">
-                            <img src="img/img1.jpg" alt="" title=""/>
-                        </a>
-                    </section>
-
-                    <section>
-                        <div class="hhalf">
-                            <a href="#">
-                                <img src="img/img2.jpg" alt="" title=""/>
-                            </a>
-                        </div>
-                        <div class="hhalf">
-                            <a href="#">
-                                <img src="img/img3.jpg" alt="" title=""/>
-                            </a>
-                        </div>
-                    </section>
-
-                    <section>
-                        <div class="hhalf">
-                            <a href="#">
-                                <img src="img/img4.jpg" alt="" title=""/>
-                            </a>
-                        </div>
-                        <div class="hhalf">
-                            <a href="#">
-                                <img src="img/img5.jpg" alt="" title=""/>
-                            </a>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </section><!--  end gallery  -->
 
 
-        {% include 'footer.html.twig' %}
+                                            <!--  start gallery  -->
+                                            <section class="gallery">
+                                                <div class="wrapper">
+                                                    <section class="info">
+                                                        <div class="title">
+                                                            <h3>Galería</h3>
+                                                            <span class="separator"></span>
+                                                        </div>
+                                                    </section>
+
+                                                    <div class="media">
+                                                        {% for i in 0..4 %}
+                                                        {% endfor %}
+                                                        <section>
+                                                            <a href="#">
+                                                                <img src="img/img1.jpg" alt="" title=""/>
+                                                            </a>
+                                                        </section>
+
+                                                        <section>
+                                                            <div class="hhalf">
+                                                                <a href="#">
+                                                                    <img src="img/img2.jpg" alt="" title=""/>
+                                                                </a>
+                                                            </div>
+                                                            <div class="hhalf">
+                                                                <a href="#">
+                                                                    <img src="img/img3.jpg" alt="" title=""/>
+                                                                </a>
+                                                            </div>
+                                                        </section>
+
+                                                        <section>
+                                                            <div class="hhalf">
+                                                                <a href="#">
+                                                                    <img src="img/img4.jpg" alt="" title=""/>
+                                                                </a>
+                                                            </div>
+                                                            <div class="hhalf">
+                                                                <a href="#">
+                                                                    <img src="img/img5.jpg" alt="" title=""/>
+                                                                </a>
+                                                            </div>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </section><!--  end gallery  -->
+
+
+                                            {% include 'footer.html.twig' %}
 
 
 
-    </body>
-</html>
+                                            </body>
+                                            </html>
 
 
 
-{% endblock %}
+                                        {% endblock %}

@@ -71,9 +71,10 @@ class PersonalController extends Controller
             return $this->redirectToRoute('personal_show', array('idpersonal' => $personal->getIdpersonal()));
         }
 
-        return $this->render('personal/new.html.twig', array(
+        return $this->render('crear.html.twig', array(
             'personal' => $personal,
             'form' => $form->createView(),
+            'volver'=>'personal',
         ));
     }
 
@@ -108,13 +109,14 @@ class PersonalController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('personal_edit', array('idpersonal' => $personal->getIdpersonal()));
+            return $this->redirectToRoute('personal_show', array('idpersonal' => $personal->getIdpersonal()));
         }
 
-        return $this->render('personal/edit.html.twig', array(
+        return $this->render('editar.html.twig', array(
             'personal' => $personal,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'volver'=>'personal',
         ));
     }
 

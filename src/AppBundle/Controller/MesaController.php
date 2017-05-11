@@ -68,9 +68,10 @@ class MesaController extends Controller
             return $this->redirectToRoute('mesa_show', array('idmesa' => $mesa->getIdmesa()));
         }
 
-        return $this->render('mesa/new.html.twig', array(
+        return $this->render('crear.html.twig', array(
             'mesa' => $mesa,
             'form' => $form->createView(),
+            'volver'=>'mesa',
         ));
     }
 
@@ -105,13 +106,14 @@ class MesaController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('mesa_edit', array('idmesa' => $mesa->getIdmesa()));
+            return $this->redirectToRoute('mesa_show', array('idmesa' => $mesa->getIdmesa()));
         }
 
-        return $this->render('mesa/edit.html.twig', array(
+        return $this->render('editar.html.twig', array(
             'mesa' => $mesa,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'volver'=>'mesa',
         ));
     }
 

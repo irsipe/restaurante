@@ -71,9 +71,10 @@ class LineamenuController extends Controller
             return $this->redirectToRoute('lineamenu_show', array('idlineamenu' => $lineamenu->getIdlineamenu()));
         }
 
-        return $this->render('lineamenu/new.html.twig', array(
+        return $this->render('crear.html.twig', array(
             'lineamenu' => $lineamenu,
             'form' => $form->createView(),
+            'volver'=>'lineamenu',
         ));
     }
 
@@ -108,13 +109,14 @@ class LineamenuController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('lineamenu_edit', array('idlineamenu' => $lineamenu->getIdlineamenu()));
+            return $this->redirectToRoute('lineamenu_show', array('idlineamenu' => $lineamenu->getIdlineamenu()));
         }
 
-        return $this->render('lineamenu/edit.html.twig', array(
+        return $this->render('editar.html.twig', array(
             'lineamenu' => $lineamenu,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'volver'=>'lineamenu',
         ));
     }
 

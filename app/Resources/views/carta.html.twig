@@ -5,15 +5,16 @@
     <body>
         {{parent()}}
 
-        <article>
+      <article>
             <div class="dishe_img">
 
             </div>
             <div class="dish_info">
-                <h3 class="item_name">   Carta</h3>
+                <h1 class="item_name">   Carta</h1>
                 {% for cargo in carta %}
+                     <h3 class="item_desc">{{ cargo.nombre_es }}&nbsp&nbsp &nbsp &nbsp   </h3>
                     <a href="#"><img src="{{cargo.imagen}}" alt="" title=""/></a>
-                    <h1 class="item_desc">{{ cargo.nombre_es }}&nbsp&nbsp &nbsp &nbsp   {{ cargo.descripcion_es }}</h1>
+                   <h3 class="item_desc">  {{ cargo.descripcion_es }}</h3>
                 {% endfor %}
             </div>
 

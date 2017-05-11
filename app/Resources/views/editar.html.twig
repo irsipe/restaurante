@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+
+    {% block medio %}
+        <h1>Edicion</h1>
+
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <br><br>
+        <input type="submit" value="Grabar datos" />
+        {{ form_end(edit_form) }}
+
+        {{ form_start(delete_form) }}
+       
+        <input type="submit" value="Borrar">
+        
+        {# {{ form(delete_form, {'attr': {'onclick': 'return confirm("Are you sure?")'}}) }} #}
+
+        {{ form_end(delete_form) }}
+        <a href="{{ path(volver~'_index') }}">Volver</a>
+    {% endblock %}
+

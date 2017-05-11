@@ -69,9 +69,10 @@ class ComentarioController extends Controller {
             return $this->redirectToRoute('comentario_show', array('idcomentario' => $comentario->getIdcomentario()));
         }
 
-        return $this->render('comentario/new.html.twig', array(
+        return $this->render('crear.html.twig', array(
                     'comentario' => $comentario,
                     'form' => $form->createView(),
+                    'volver'=>'comentario',
         ));
     }
 
@@ -104,13 +105,14 @@ class ComentarioController extends Controller {
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('comentario_edit', array('idcomentario' => $comentario->getIdcomentario()));
+            return $this->redirectToRoute('comentario_show', array('idcomentario' => $comentario->getIdcomentario()));
         }
 
-        return $this->render('comentario/edit.html.twig', array(
+        return $this->render('editar.html.twig', array(
                     'comentario' => $comentario,
                     'edit_form' => $editForm->createView(),
                     'delete_form' => $deleteForm->createView(),
+                    'volver'=>'comentario',
         ));
     }
 

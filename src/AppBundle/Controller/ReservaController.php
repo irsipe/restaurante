@@ -65,16 +65,58 @@ class ReservaController extends Controller
             $em->persist($reserva);
             $em->flush();
 
-           // return $this->redirectToRoute('reserva_show', array('idreserva' => $reserva->getIdreserva()));
+            return $this->redirectToRoute('reserva_show', array('idreserva' => $reserva->getIdreserva()));
+        }
+
+        return $this->render('crear.html.twig', array(
+            'reserva' => $reserva,
+            'form' => $form->createView(),
+            'volver'=>'reserva',
+        ));
+    }
+/**
+     * Creates a new reserva entity.
+     *
+     * @Route("/reservacliente", name="reservacliente")
+     * @Method({"GET", "POST"})
+     */
+    public function reservacliente(Request $request)
+    {
+        $reserva = new Reserva();
+        $form = $this->createForm('AppBundle\Form\ReservaType', $reserva);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($reserva);
+            $em->flush();
+            echo 'reserva_cliente';
+           return $this->redirectToRoute('reserva_cliente', array('idreserva' => $reserva->getIdreserva()));
         }
 
         return $this->render('reservacliente.html.twig', array(
             'reserva' => $reserva,
             'form' => $form->createView(),
-        ));
+                    ));
     }
 
-    /**
+  
+ /**
+     * Finds and displays a reserva entity.
+     *
+     * @Route("/reserva_cliente/{idreserva}", name="reserva_cliente")
+     * @Method("GET")
+     */
+    public function showcliente(Reserva $reserva)
+    {
+        $deleteForm = $this->createDeleteForm($reserva);
+
+        return $this->render('reserva/showcliente.html.twig', array(
+            'reserva' => $reserva,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+  /**
      * Finds and displays a reserva entity.
      *
      * @Route("/{idreserva}", name="reserva_show")
@@ -89,7 +131,6 @@ class ReservaController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
-
     /**
      * Displays a form to edit an existing reserva entity.
      *
@@ -105,13 +146,14 @@ class ReservaController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('reserva_edit', array('idreserva' => $reserva->getIdreserva()));
+            return $this->redirectToRoute('reserva_show', array('idreserva' => $reserva->getIdreserva()));
         }
 
-        return $this->render('reserva/edit.html.twig', array(
+        return $this->render('editar.html.twig',array(
             'reserva' => $reserva,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'volver'=>'reserva',
         ));
     }
 
@@ -125,7 +167,6 @@ class ReservaController extends Controller
     {
         $form = $this->createDeleteForm($reserva);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($reserva);

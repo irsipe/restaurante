@@ -72,9 +72,10 @@ class ProductoController extends Controller
             return $this->redirectToRoute('producto_show', array('idproducto' => $producto->getIdproducto()));
         }
 
-        return $this->render('producto/new.html.twig', array(
+        return $this->render('crear.html.twig', array(
             'producto' => $producto,
             'form' => $form->createView(),
+            'volver'=>'producto',
         ));
     }
 
@@ -109,13 +110,14 @@ class ProductoController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('producto_edit', array('idproducto' => $producto->getIdproducto()));
+            return $this->redirectToRoute('producto_show', array('idproducto' => $producto->getIdproducto()));
         }
 
-        return $this->render('producto/edit.html.twig', array(
+        return $this->render('editar.html.twig', array(
             'producto' => $producto,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'volver'=>'producto',
         ));
     }
 

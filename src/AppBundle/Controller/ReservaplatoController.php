@@ -69,9 +69,10 @@ class ReservaplatoController extends Controller
             return $this->redirectToRoute('reservaplato_show', array('idreservaplato' => $reservaplato->getIdreservaplato()));
         }
 
-        return $this->render('reservaplato/new.html.twig', array(
+        return $this->render('crear.html.twig',array(
             'reservaplato' => $reservaplato,
             'form' => $form->createView(),
+            'volver'=>'reservaplato',
         ));
     }
 
@@ -106,13 +107,14 @@ class ReservaplatoController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('reservaplato_edit', array('idreservaplato' => $reservaplato->getIdreservaplato()));
+            return $this->redirectToRoute('reservaplato_show', array('idreservaplato' => $reservaplato->getIdreservaplato()));
         }
 
-        return $this->render('reservaplato/edit.html.twig', array(
+        return $this->render('editar.html.twig', array(
             'reservaplato' => $reservaplato,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'volver'=>'reservaplato',
         ));
     }
 

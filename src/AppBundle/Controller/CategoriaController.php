@@ -68,9 +68,10 @@ class CategoriaController extends Controller
             return $this->redirectToRoute('categoria_show', array('idcategoria' => $categorium->getIdcategoria()));
         }
 
-        return $this->render('categoria/new.html.twig', array(
+        return $this->render('crear.html.twig', array(
             'categorium' => $categorium,
             'form' => $form->createView(),
+            'volver'=>'categoria',
         ));
     }
 
@@ -105,13 +106,14 @@ class CategoriaController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('categoria_edit', array('idcategoria' => $categorium->getIdcategoria()));
+            return $this->redirectToRoute('categoria_show', array('idcategoria' => $categorium->getIdcategoria()));
         }
 
-        return $this->render('categoria/edit.html.twig', array(
+        return $this->render('editar.html.twig', array(
             'categorium' => $categorium,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'volver'=>'categoria',
         ));
     }
 

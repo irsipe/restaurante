@@ -68,9 +68,10 @@ class MenuController extends Controller
             return $this->redirectToRoute('menu_show', array('idmenu' => $menu->getIdmenu()));
         }
 
-        return $this->render('menu/new.html.twig', array(
+        return $this->render('crear.html.twig', array(
             'menu' => $menu,
             'form' => $form->createView(),
+            'volver'=>'menu',
         ));
     }
 
@@ -105,13 +106,14 @@ class MenuController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('menu_edit', array('idmenu' => $menu->getIdmenu()));
+            return $this->redirectToRoute('menu_show', array('idmenu' => $menu->getIdmenu()));
         }
 
-        return $this->render('menu/edit.html.twig', array(
+        return $this->render('editar.html.twig',array(
             'menu' => $menu,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'volver'=>'menu',
         ));
     }
 

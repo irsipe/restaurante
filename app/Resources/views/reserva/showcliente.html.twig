@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reserva</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Fecha</th>
+                <td>{% if reserva.fecha %}{{ reserva.fecha|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Hora</th>
+                <td>{% if reserva.hora %}{{ reserva.hora|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ncomensales</th>
+                <td>{{ reserva.ncomensales }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ reserva.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Idmesa</th>
+                <td>{{ reserva.idmesa }}</td>
+            </tr>
+            <tr>
+                <th>Idreserva</th>
+                <td>{{ reserva.idreserva }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('homepage') }}">Volver</a>
+        </li>
+        <li>
+            <a href="{{ path('reserva_edit', { 'idreserva': reserva.idreserva }) }}">Editar</a>
+        </li>
+
+    </ul>
+{% endblock %}
+

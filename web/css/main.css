@@ -351,7 +351,7 @@ header nav ul li a:hover{
     font-weight: normal;
 }
 
-.menu article ul li .item_desc{
+.menu article ul li {
     color: #b7b7b7;
     font-family: "aleo-italic", arial;
     font-size: 12px;
@@ -359,6 +359,16 @@ header nav ul li a:hover{
     letter-spacing: 1px;
     font-weight: lighter;
 }
+
+.item_desc{
+    color: #b7b7b7;
+    font-family: "aleo-italic", arial;
+    font-size: 30px;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-weight: lighter;   
+}
+
 
 .menu article ul li .price{
     float: right;

@@ -69,12 +69,13 @@ class ClienteController extends Controller
             $em->persist($cliente);
             $em->flush();
 
-            return $this->redirectToRoute('cliente_show', array('idcliente' => $cliente->getIdcliente()));
+           return $this->redirectToRoute('cliente_show', array('idcliente' => $cliente->getIdcliente()));
         }
 
-        return $this->render('cliente/new.html.twig', array(
+        return $this->render('crear.html.twig',  array(
             'cliente' => $cliente,
             'form' => $form->createView(),
+            'volver'=>'cliente',
         ));
     }
 
@@ -109,13 +110,14 @@ class ClienteController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('cliente_edit', array('idcliente' => $cliente->getIdcliente()));
+            return $this->redirectToRoute('cliente_show', array('idcliente' => $cliente->getIdcliente()));
         }
 
-        return $this->render('cliente/edit.html.twig', array(
+        return $this->render('editar.html.twig', array(
             'cliente' => $cliente,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'volver'=>'cliente',
         ));
     }
 

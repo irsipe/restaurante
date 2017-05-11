@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+ {% block medio %}
+    <h1>Nuevo registro</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Crear" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path(volver~'_index') }}">Volver</a>
+        </li>
+    </ul>
+{% endblock %}
+{# empty Twig template #}
