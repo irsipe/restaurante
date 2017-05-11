@@ -29,9 +29,9 @@ class ProductoController extends Controller
                                    'Descripcion ES','Descripcion CAT','Descripcion EN',
                                    'Preparacion ES','Preparacion CAT','Preparacion EN',
                                    'Precio' ,'Imagen'); 
-        $campos=array('idmesa','Nombrees','Nombrecat','Nombreen','Descripciones','Descripcioncat',
+        $campos=array('idproducto','Nombrees','Nombrecat','Nombreen','Descripciones','Descripcioncat',
                     'Descripcionen','Preparaciones','Preparacioncat','Preparacionen','Precio','Imagen');
-        $tipos=array('','','','','','','','','','',''); 
+        $tipos=array('','','','','','','','','','','',''); 
           
         
         return $this->render('muestratabla.html.twig', array(
