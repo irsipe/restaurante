@@ -94,4 +94,9 @@ class Mesa
     {
         return $this->idmesa;
     }
+    
+      public function __toString() {
+         return $this->idmesa.' '.$this->ubicacion;
+        ;
+    }
 }

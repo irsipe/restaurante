@@ -15,13 +15,13 @@
         <title>{% block title %}Casa Irene{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('logo.png') }}" />
+    {% block funcion1 %}{% endblock %}
+           
 </head>
 <body>
-    {% block body %}
 
+    {% block muestra %}
         <header>
-
-
             <div class="row">
 
                 <div class="col-md-2">
@@ -35,12 +35,12 @@
                         <ul>
                             <li><a href="{{ path ('nuestrahistoria') }}">Nuestra historia</a></li>
                             <li><a href="{{ path ('muestracarta') }}">Carta</a></li>
-                            <li><a href="{{ path ('reservacliente') }}">Reservas</a></li>
+                            <li><a href="{{ path ('reserva_new') }}">Reservas</a></li>
                             <li><a href="{{ path ('muestracomment') }}">Comentarios</a></li>
                             <li><a href="{{ path ('dondeestamos') }}">Dónde estamos</a></li>
                             <li><a href="{{ path ('areaclientes') }}">M clientes</a></li>
                             <li><a href="{{ path ('tablas') }}">M Tablas</a></li>
-                                                        
+
                         </ul>
                     </nav>
                 </div>
@@ -84,7 +84,8 @@
 
             </div>
         </section><!--  end hero  -->
-
+    {% endblock %}
+    {% block body %}
     {% endblock %}
 {% block javascripts %}{% endblock %}
 

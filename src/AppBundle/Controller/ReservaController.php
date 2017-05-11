@@ -26,9 +26,9 @@ class ReservaController extends Controller
 
         $datos = $em->getRepository('AppBundle:Reserva')->findAll();
         
-        $cabecera=array('Registro','Fecha','Hora','Ncomensales','Nombre'); 
-        $campos=array('idremesa','Fecha','hora','Ncomensales','Nombre');
-        $tipos=array('','d','','',''); 
+        $cabecera=array('Registro','Fecha','Ncomensales','Nombre','mesa'); 
+        $campos=array('idreserva','Fecha','Ncomensales','Nombre','idmesa');
+        $tipos=array('','d','','','',''); 
          
         
         return $this->render('muestratabla.html.twig', array(
@@ -65,10 +65,10 @@ class ReservaController extends Controller
             $em->persist($reserva);
             $em->flush();
 
-            return $this->redirectToRoute('reserva_show', array('idreserva' => $reserva->getIdreserva()));
+           // return $this->redirectToRoute('reserva_show', array('idreserva' => $reserva->getIdreserva()));
         }
 
-        return $this->render('reserva/new.html.twig', array(
+        return $this->render('reservacliente.html.twig', array(
             'reserva' => $reserva,
             'form' => $form->createView(),
         ));

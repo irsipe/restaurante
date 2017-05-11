@@ -1,55 +1,37 @@
 {% extends 'base.html.twig' %}
+{% block funcion1 %}
+    <script>
+        $(function () {
+            $.datepicker.setDefaults($.datepicker.regional["es"]);
+            $("#datepicker").datepicker({
 
+                firstDay: 1,
+                onSelect: function (date) {
+                    alert(date)
+                },
+            });
+        });
+    </script>
+{% endblock %}
 {% block body %}
 
-    <body>
-        {{parent()}}
-        <div class='row'>
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-8">
-                <h2>Reserva tu mesa :</h2>
-                <br>
-                <div id='datosreserva'>
 
-                    <form action="." oninput="range_control_value.value = range_control.valueAsNumber">
-                        <p>
-                            Nombre: 
-                            <br />
-                            <input type="text" name="name_control" autofocus required />
-                            <br />
-                            Correo Electrónico: 
-                            <br />
-                            <input type="email" name="email_control" required />
-                            <br />
-
-                            Número (min 1, max 10): 
-                            <br />
-                            <input type="number" name="number_control" min="1" max="10" value="1" />
-                            <br />
-
-                            Teléfono: 
-                            <br />
-                            <input type="tel" name="tel_control" />
-                            <br />
-                            <br />
-                            <input type="submit" value="Enviar" />
-                        </p>
-                </div>
-                <div id='calendario'>
-                    Fecha:
-                    <br />
-                    <input type="text" id="datepicker" />
-
-                </div>
-            </div>
-            <div class="col-md-2">
-            </div>
+    {{parent()}}
+    <div class='row'>
+        <div class="col-md-2">
         </div>
-        {% include 'footer.html.twig' %}
+        <div class="col-md-4">
+            <h2>Reserva tu mesa :</h2>
 
-    </body>
-</html>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" value="Reserva" />
+            {{ form_end(form) }}
+        </div>
+    </div>
+    {% include 'footer.html.twig' %}
+
+
 
 
 
