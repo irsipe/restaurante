@@ -14,14 +14,9 @@ class DefaultController extends Controller {
      */
     public function indexAction(Request $request) {
         // replace this example code with whatever you need
-
-        $po1 = $this->menudiario(1);
-        $po2 = $this->menudiario(2);
-        $po3 = $this->menudiario(3);
-        $precio = $this->menuPrecio();
-        return $this->render('default/index.html.twig', [
-                    "menu1" => $po1, "menu2" => $po2, "menu3" => $po3, "precio" => $precio,
-        ]);
+        
+        return $this->idioma('ES');
+       
     }
 
     /**
@@ -110,13 +105,32 @@ class DefaultController extends Controller {
     public function nada() {
         return $this->render('nada.html.twig');
     }
-/**
-     * @Route("/{dia}", name="menudiario")
+    
+     /**
+     * @Route("/idioma/{idioma}", name="idioma" ,requirements={"idioma"})  
      */
-    public function menudiario($plato) {
+     public function idioma($idioma)
+    {
+        $platos1 = $this->menudiario(1,$idioma);
+        $platos2 = $this->menudiario(2,$idioma);
+        $platos3 = $this->menudiario(3,$idioma);
+        $precio = $this->menuPrecio();
+        return $this->render('default/index.html.twig', [
+                    "menu1" => $platos1, "menu2" => $platos2, "menu3" => $platos3, "precio" => $precio,
+        ]);
+         
+    }
+    
+    
+    
+    
+/**
+     * @Route("/dia/{dia}/{idioma}", name="menudiario")
+     */
+    public function menudiario($plato,$idioma) {
         $em = $this->getDoctrine()->getEntityManager();
         $db = $em->getConnection();
-        $query = "select * from menu join lineamenu using(idmenu) where fecha= :fechahoy and idcategoria=" . $plato;
+        $query = "select l.nombreplato_".$idioma." as nombreplato from menu join lineamenu l using(idmenu) where fecha= :fechahoy and idcategoria=" . $plato;
         $stmt = $db->prepare($query);
         $stmt->bindParam(':fechahoy', $hoy);
         $hoy = date("Ymd");

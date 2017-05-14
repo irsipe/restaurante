@@ -159,7 +159,7 @@
 
                     <article>
                         <div class="dishe_img">
-                            <a href="#"><img src="img/dish1.jpg" alt="" title=""/></a>					
+                            <a href="#"><img src="{{asset('/web/img/dish1.jpg')}}" alt="" title=""/></a>					
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Fugiat nulla sint</h2></a>
@@ -210,7 +210,7 @@
 
                     <article>
                         <div class="dishe_img">
-                            <a href="#"><img src="img/dish4.jpg" alt="" title=""/></a>					
+                            <a href="#"><img src="{{asset('img/dish4.jpg')}}" alt="" title=""/></a>					
                         </div>
                         <div class="dish_info">
                             <a href="#"><h2>Pim minim veniam</h2></a>
@@ -249,7 +249,7 @@
 
                                     <h2 class="item_name">PRIMEROS PLATOS</h2>
                                     {% for cargo in menu1 %}
-                                        <h3 class="item_desc">{{ cargo.nombreplato_es }}</h3>
+                                        <h3 class="item_desc">{{ cargo.nombreplato }}</h3>
                                     {% endfor %}
 
                                 </div>
@@ -261,7 +261,7 @@
 
                                     <h2 class="item_name">SEGUNDOS PLATOS</h2>
                                     {% for cargo in menu2 %}
-                                        <h3 class="item_desc">{{ cargo.nombreplato_es }}</h3>
+                                        <h3 class="item_desc">{{ cargo.nombreplato}}</h3>
                                     {% endfor %}
 
                                 </div>
@@ -272,7 +272,7 @@
                                 <div class="item_info">
                                     <h2 class="item_name">POSTRES</h2>
                                     {% for cargo in menu3 %}
-                                        <h3 class="item_desc">{{ cargo.nombreplato_es }}<h3>
+                                        <h3 class="item_desc">{{ cargo.nombreplato }}<h3>
                                     {% endfor %}
                                 </div>
                                             <br>    
